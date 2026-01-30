@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Organogram: Housing Department</title>
+    <meta name="Description" content="Directorate of Housing, Housing Department, Government of Meghalaya" />
+    <meta name="Keywords"
+        content="Directorate of Housing, Housing Schemes, Acts, Rules, laws, Bye-laws, Meghalaya State Housing Board, Rural Housing Scheme (RHS), Housing Scheme, MIG, LIG &amp; EWS Rental Houses " />
+
+    <!-- Fonts: Inter (Google Fonts) -->
+    <!-- FontAwesome Icons -->
+
+    <link href="css/inter-font.css" rel="stylesheet">
+    <link href="css/fontawesome-local.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!-- Zero Flicker: Load themes as blocking resources -->
+    <link href="css/black.css" rel="stylesheet" type="text/css" />
+    <link href="css/white.css" rel="stylesheet" type="text/css" />
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+    <script type='text/javascript' src='js/jquery.min.js'></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/theme.js" type="text/javascript"></script>
+    <!-- Legacy inline script removed: theme.js now auto-executes -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+
+<body>
+    <!-- Top Utility Bar -->
+    <!-- Top Utility Bar -->
+    <div class="header_top">
+        <ul class="top_nav">
+            <li class="gov-branding">
+                <span class="gov-text">Government of Meghalaya</span>
+            </li>
+
+            <li><a href="#main-content" class="skip-link">Skip to Main Content</a></li>
+            <li><a href="screen.html" title="Screen Reader Access">Screen Reader Access</a></li>
+            <li class="access-tools">
+                <span class="label">Text Size:</span>
+                <a id="fontSmall" href="javascript:void(0);" aria-label="Decrease Text Size" class="font-control">A-</a>
+                <a id="fontDefault" href="javascript:void(0);" aria-label="Reset Text Size" class="font-control">A</a>
+                <a id="fontLarge" href="javascript:void(0);" aria-label="Increase Text Size" class="font-control">A+</a>
+            </li>
+            <li class="access-tools">
+                <span class="label">Contrast:</span>
+                <a href="#" onClick="switch_style('style');return false;" id="style" aria-label="Default Contrast"
+                    class="contrast-swatch swatch-default" title="Default Contrast"></a>
+                <a href="#" onClick="switch_style('black');return false;" id="black" aria-label="High Contrast Black"
+                    class="contrast-swatch swatch-black" title="High Contrast"></a>
+                <a href="#" onClick="switch_style('white');return false;" id="white" aria-label="High Contrast White"
+                    class="contrast-swatch swatch-white" title="Light Contrast"></a>
+            </li>
+        </ul>
+    </div>
+    <!-- Main Header / Banner -->
+    <!-- Main Header / Banner -->
+    <header class="main-header">
+        <div class="container-fluid header-display">
+            <img src="images/header.png" alt="Directorate of Housing, Government of Meghalaya" class="banner-img">
+        </div>
+    </header>
+    <!-- Navigation Bar (Mega Menu) -->
+    <!-- Navigation Bar (Mega Menu) -->
+    <nav id="main-navbar" class="main-navbar" aria-label="Main Navigation">
+        <div class="nav-container">
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="organogram.html">Organogram</a></li>
+                <li><a href="schemes.html">Schemes</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="tenders.html">Tenders</a></li>
+                <li><a href="notifications.html" class="active">Notifications</a></li>
+                <li><a href="acts.html">Acts</a></li>
+                <li><a href="key_contacts.html">Key Contacts</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <li><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Main Content Wrapper -->
+    <main id="main-content" class="main-wrapper">
+        <div class="inner-page-container">
+            <div class="content-card">
+                <div class="content-body">
+                    <h1 class="page-title">Notifications</h1>
+                    <ul class="page-notice-list" id="full-notice-list">
+                        <!-- Notifications loaded dynamically via JS -->
+                    </ul>
+                    <!-- Template for Notification Items -->
+                    <template id="notice-item-template">
+                        <li class="notice-item">
+                            <span class="notice-date"></span>
+                            <div class="notice-content">
+                                <a href="" target="_blank" class="notice-link"></a>
+                                <div class="file-meta">
+                                    <span class="file-type"><i class="fas fa-file-pdf"></i></span>
+                                    <span class="file-size"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Important Links Strip -->
+    <div class="important-links-strip">
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn" id="linkPrev" aria-label="Previous Links"><i
+                    class="fas fa-chevron-left"></i></button>
+            <div class="carousel-track-container">
+                <div class="important-links-track" id="linkTrack">
+                    <a href="https://india.gov.in" target="_blank" rel="noopener noreferrer">
+                        <img src="images/importantLinks/indiagov.jpg" alt="National Portal of India">
+                    </a>
+                    <a href="https://meghalaya.gov.in/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/importantLinks/meg.jpg" alt="Meghalaya State Portal">
+                    </a>
+                    <a href="https://rti.gov.in/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/importantLinks/rtiact.jpg" alt="RTI Act Portal">
+                    </a>
+                    <a href="https://www.digitalindia.gov.in" target="_blank" rel="noopener noreferrer">
+                        <img src="images/importantLinks/digitalIndia.jpg" alt="Digital India">
+                    </a>
+                    <a href="https://www.makeinindia.com" target="_blank" rel="noopener noreferrer">
+                        <img src="images/importantLinks/make-in-india.jpg" alt="Make in India">
+                    </a>
+                    <a href="https://www.mygov.in" target="_blank" rel="noopener noreferrer">
+                        <img src="images/importantLinks/my-gov.jpg" alt="MyGov">
+                    </a>
+                    <a href="https://www.pmindia.gov.in" target="_blank" rel="noopener noreferrer">
+                        <img src="images/importantLinks/pm-india.jpg" alt="PM India">
+                    </a>
+                    <a href="https://swachhbharatmission.gov.in" target="_blank" rel="noopener noreferrer">
+                        <img src="images/importantLinks/swatchBharat.jpg" alt="Swasch Bharat Mission">
+                    </a>
+                    <a href="https://www.nic.in/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/importantLinks/nic.png" alt="National Informatics Centre">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-btn next-btn" id="linkNext" aria-label="Next Links"><i
+                    class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+    <footer class="main-footer">
+        <div class="footer-bottom">
+            <p>Site designed, developed and hosted by National Informatics Centre<br> Directorate of Housing, Government
+                of Meghalaya</p>
+            <div class="footer-links">
+                <a href="terms.html">Terms of Use</a> | <a href="accessibility-statement.html">Accessibility
+                    Statement</a> | <a href="help.html">Help</a>
+            </div>
+            <p id="last-updated" class="last-updated">
+                <script>
+                    var LastModDate = new Date(document.lastModified);
+                    document.write('Last updated: ' + LastModDate.toDateString());
+                </script>
+            </p>
+        </div>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/notifications-data.js"></script>
+    <script src="js/notifications-loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load all notifications (limit 0)
+            loadNotifications('full-notice-list', 0);
+        });
+    </script>
+</body>
+
+</html>

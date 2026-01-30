@@ -1,0 +1,284 @@
+/* 
+   High Contrast White Theme (GIGW Compliant)
+   Overrides ONLY colors via CSS Variables
+   Applied when <html data-theme="white"> 
+*/
+
+html[data-theme="white"] {
+	/* Main Palette Re-map -> White/Black */
+	--primary-color: #000000;
+	/* Standard Green -> Black */
+	--primary-dark: #000000;
+	/* Dark Green -> Black */
+	--primary-light: #333333;
+	/* Light Green -> Dark Grey */
+
+	--secondary-color: #000000;
+	/* Charcoal Text -> Black */
+	--text-muted: #000000;
+	/* Muted Text -> Black */
+
+	--accent-color: #000000;
+	/* Gold -> Black */
+	--accent-hover: #333333;
+	/* Hover -> Dark Grey */
+
+	/* Backgrounds */
+	--bg-body: #ffffff;
+	/* Light Grey -> Pure White */
+	--bg-white: #ffffff;
+	/* White -> Pure White */
+	--bg-nav: #ffffff;
+	/* Navy Nav -> White */
+
+	/* Borders & Shadows */
+	/* Replace shadows with solid borders for high contrast visibility */
+	--shadow-sm: 0 0 0 1px #000000;
+	--shadow-card: 0 0 0 1px #000000;
+	--shadow-hover: 0 0 0 2px #000000;
+}
+
+/* Force overrides for elements that might not fully use vars or need specific tweaks */
+html[data-theme="white"] body,
+html[data-theme="white"] h1,
+html[data-theme="white"] h2,
+html[data-theme="white"] h3,
+html[data-theme="white"] h4,
+html[data-theme="white"] h5,
+html[data-theme="white"] p,
+html[data-theme="white"] span,
+html[data-theme="white"] div,
+html[data-theme="white"] a,
+html[data-theme="white"] li {
+	background-color: transparent;
+	/* Rely on container backgrounds */
+	color: #000000;
+	border-color: #000000;
+}
+
+/* Links */
+html[data-theme="white"] a {
+	text-decoration: underline;
+	color: #000000;
+}
+
+html[data-theme="white"] a:hover {
+	/* Invert on hover standard for HC White */
+	background-color: #000000 !important;
+	color: #ffffff !important;
+}
+
+/* Specific Component Fixes - Backgrounds */
+html[data-theme="white"] .main-header,
+html[data-theme="white"] .header-display,
+html[data-theme="white"] .hero-section,
+html[data-theme="white"] .service-card,
+html[data-theme="white"] .footer-bottom,
+html[data-theme="white"] .header_top,
+html[data-theme="white"] .important-links-strip,
+html[data-theme="white"] .gov-branding,
+html[data-theme="white"] .access-tools,
+html[data-theme="white"] .services-section,
+html[data-theme="white"] .main-wrapper,
+html[data-theme="white"] .notice-board-container,
+html[data-theme="white"] .notice-header,
+html[data-theme="white"] .notice-body,
+html[data-theme="white"] .notice-item,
+html[data-theme="white"] .notice-date,
+html[data-theme="white"] .font-control,
+html[data-theme="white"] .contrast-swatch,
+html[data-theme="white"] .main-footer {
+	background-color: #ffffff !important;
+	background: #ffffff !important;
+	/* Force override gradients */
+	border-color: #000000 !important;
+	color: #000000 !important;
+	box-shadow: none !important;
+}
+
+/* Explicit Swatch Overrides */
+html[data-theme="white"] .swatch-default {
+	background-color: #15803d !important;
+	/* Green */
+	border-color: #000000 !important;
+}
+
+html[data-theme="white"] .swatch-black {
+	background-color: #000000 !important;
+	/* Black */
+	border-color: #000000 !important;
+}
+
+html[data-theme="white"] .swatch-white {
+	background-color: #ffffff !important;
+	/* White */
+	border-color: #000000 !important;
+}
+
+html[data-theme="white"] .service-card {
+	border: 1px solid #000000;
+	text-decoration: none !important;
+	/* Remove underline from card block */
+}
+
+/* Specific Component Fixes - Text Color overrides */
+/* Ensure text inside service cards is black normally */
+html[data-theme="white"] .service-card h4,
+html[data-theme="white"] .service-card p {
+	color: #000000 !important;
+}
+
+/* HOVER STATE: Invert Colors */
+html[data-theme="white"] .service-card:hover {
+	background-color: #000000 !important;
+	color: #ffffff !important;
+	border-color: #000000 !important;
+}
+
+html[data-theme="white"] .service-card:hover h4,
+html[data-theme="white"] .service-card:hover p {
+	color: #ffffff !important;
+	/* White text on black hover */
+}
+
+/* Icon Readability Fix */
+html[data-theme="white"] .service-icon {
+	background-color: #ffffff !important;
+	/* White background */
+	border: 1px solid #000000 !important;
+	/* Black border */
+}
+
+html[data-theme="white"] .service-icon i {
+	color: #000000 !important;
+	/* Black Icon */
+}
+
+/* Invert Icon on HOVER */
+html[data-theme="white"] .service-card:hover .service-icon {
+	background-color: #000000 !important;
+	border-color: #ffffff !important;
+}
+
+html[data-theme="white"] .service-card:hover .service-icon i {
+	color: #ffffff !important;
+	/* White icon on hover */
+}
+
+
+/* Notification Board Specifics */
+html[data-theme="white"] .notice-header h3,
+html[data-theme="white"] .view-all,
+html[data-theme="white"] .notice-link {
+	color: #000000 !important;
+	background-color: transparent !important;
+}
+
+/* Fix notice link hover */
+html[data-theme="white"] .notice-link:hover {
+	background-color: #000000 !important;
+	color: #ffffff !important;
+}
+
+html[data-theme="white"] .notice-date {
+	border: 1px solid #000000 !important;
+	background-color: #ffffff !important;
+	color: #000000 !important;
+}
+
+/* Text Size Buttons */
+html[data-theme="white"] .font-control {
+	border: 1px solid #000000 !important;
+	color: #000000 !important;
+}
+
+html[data-theme="white"] .font-control:hover {
+	background-color: #000000 !important;
+	color: #ffffff !important;
+}
+
+/* Fix for marquee/slider stripe */
+html[data-theme="white"] .marquee-container,
+html[data-theme="white"] .slider-track {
+	background-color: #ffffff !important;
+}
+
+/* Navbar */
+html[data-theme="white"] .main-navbar {
+	background-color: #ffffff !important;
+	border-bottom: 2px solid #000000;
+}
+
+html[data-theme="white"] .top_nav li a,
+html[data-theme="white"] .nav-menu li a {
+	color: #000000 !important;
+}
+
+html[data-theme="white"] .top_nav li a:hover,
+html[data-theme="white"] .nav-menu li a:hover {
+	background-color: #000000 !important;
+	color: #ffffff !important;
+}
+
+
+/* Buttons */
+html[data-theme="white"] .btn-primary,
+html[data-theme="white"] .btn-secondary {
+	background-color: #ffffff !important;
+	color: #000000 !important;
+	border: 1px solid #000000 !important;
+}
+
+html[data-theme="white"] .btn-primary:hover,
+html[data-theme="white"] .btn-secondary:hover {
+	background-color: #000000 !important;
+	color: #ffffff !important;
+}
+
+/* Important Links - High Visibility */
+html[data-theme="white"] .important-links-track img {
+	filter: none !important;
+	opacity: 1 !important;
+}
+
+/* Carousel Nav Buttons */
+html[data-theme="white"] .carousel-btn {
+	color: #000000 !important;
+}
+
+html[data-theme="white"] .carousel-btn:hover {
+	transform: scale(1.2);
+}
+
+/* ADDED: Top Border for Navbar */
+html[data-theme="white"] .main-navbar {
+	border-top: 2px solid #000000 !important;
+}
+
+/* Mobile Menu Background Override */
+@media (max-width: 900px) {
+	html[data-theme="white"] .nav-menu {
+		background-color: #ffffff !important;
+		border-bottom: 2px solid #000000;
+	}
+
+	html[data-theme="white"] .nav-menu li {
+		border-bottom: 1px solid #000000 !important;
+		/* Black dividers */
+	}
+
+	html[data-theme="white"] .nav-menu li:first-child {
+		border-top: 1px solid #000000 !important;
+	}
+}
+
+/* Mobile Hamburger Icon Visibility */
+html[data-theme="white"] .bar {
+	background-color: #000000 !important;
+}
+
+/* Footer Links Logic */
+html[data-theme="white"] .footer-links a {
+	color: #000000 !important;
+	text-decoration: underline;
+}

@@ -1,0 +1,792 @@
+
+
+
+
+
+PROJECT 	PROPOSAL DOCUMENT
+FOR CREATION OF
+
+OPTIMISING REPORTING PROCESSES THROUGH DIGITAL TRANSFORMATION OF MSCPCR
+
+FOR GOVERNMENT OF MEGHALAYA
+
+
+
+SUBMITTED TO:
+MSCPCR, GOVERNMENT OF MEGHALAYA
+
+
+
+
+
+
+PREPARED & SUBMITTED BY:
+NIC MEGHALAYA STATE CENTRE
+NATIONAL INFORMATICS CENTRE
+MINISTRY OF ELECTRONICS & INFORMATION TECHNOLOGY
+GOVERNMENT OF INDIA
+NIC BUILDING, SECRETARIAT HILL, SHILLONG, MEGHALAYA
+       JANUARY, 2025
+
+
+
+
+
+
+
+
+1. Introduction
+
+Document Background 
+
+The Meghalaya State Commission for Protection of Child Rights (MSCPCR) is a statutory body formed by an Act of Parliament is tasked with upholding the Rights of Children in the State of Meghalaya. It has an online presence via the govt. website (megscpcr.gov.in) hosted by NIC, Meghalaya. The Commission also has a YouTube channel and its own Facebook page. 
+
+The MSCPCR, during the COVID Pandemic and its aftermath found the need for enhancing its online presence especially via Social Media and also the need to digitalize some of its routine office works.
+
+The Commission receives various reports from the Police, the District Child Protection Units (DCPU’s) and the District Courts especially on POCSO (Protection of Children from Sexual Offences) cases.  These reports are being forwarded to the Commission by the concerned Authorities and compiled at the State Commission. 
+
+The MSCPCR in the process of digitalizing the records & reports received in the year 2022 - found mismatch of the data collected. Therefore, in order to streamline the data collection process and to ensure reliability of the data collected and to enhance the online presence of the Commission, expressed keenness on developing with National Informatics Center, Meghalaya: -
+
+The Official Website of the Commission
+Web-based application for entry of records and reports – with the capability to compile, analyze the data and ensure reliability of the data entered, including Report Generation.
+
+In view of the above, it is proposed to develop a computerized system that will help to reduce administrative burden of Report Uploading, Emailing, Compilation, Generation – while enabling proper and efficient, time-bound - management of their office processes.
+
+
+Purpose and scope of work
+
+Website: One of the stated purpose is to create a dynamic Website for the Commission that will enhance its accessibility to the public. Visible online Presence in a vibrant manner encompassing Social Media and in future course an online grievance system.
+Web Based Application: The purpose of the application is to streamline the reporting and follow-up of cases related to children.  All stakeholders will benefit as duplication of data entry will be reduced, ensuring proper and accurate records and also to compile and analyze the data for future use of the various stakeholders.
+
+At present, entire process is manual, involving manual data entry, manual data checks, manual report generation and compilation, manual transaction of reports – that is time consuming and involves replication of work from various sectors of the Commission.
+
+The scope of this project is to develop a role-based service delivery system which will streamline and automate the various activities within the Commission and the various stakeholders (DCPU, Police and Courts), generate a dashboard showcasing a comprehensive overview of data from different sources, which will in-turn be useful for monitoring, measuring, and analyzing data in real-time. It will further enable the Commission to make informed decisions in policy making and projections to the State and Central Government and other Agencies. The process will bring about greater accuracy, higher processing speed - thereby reducing administrative workload.  
+
+
+Intended Audience
+
+The intended audience for the website - will be the public in general and any related parties who wishes to communicate and are seeking information about the Commission.
+
+The target audience for the Web Based application - will be the Commission itself and the DCPU’s to ease access on Case Status at the police and courts level.
+
+
+1.4. About NIC 
+National Informatics Centre (NIC) is a premiere S & T organization of the Government of India in the field of Informatics Services and Information Technology (IT) applications, and has been instrumental in steering Information and Communication Technology (ICT) applications in Government Departments at Central, State and Districts in government services, wider transparency in government functions, and improvement in decentralized planning and management. To facilitate this, NIC has established a nationwide ICT Network – NICNET – with gateway nodes in Central Government Departments, 35 State/UT Secretariats, and in almost all 602 District Collect orates, for IT services. The Government has designated the nationwide Computer-Communication Network, NICNET, as the Government Network.
+The long-term objective of the National Informatics Centre is ‘to establish the feasibility of a system for the provision of detailed information to government ministries and agencies to assist them in making decisions relating to the country’s economic and social development planning and programmed implementation’. 
+NIC is committed to meeting and acceding to the customer requirements by providing quality and reliable ICT services and global solutions. NIC was set up to promote economic, social, scientific and technological activities, and also for macro-economic adjustment programs of the Government, through the applications of IT. 
+NIC set up its first office in Meghalaya state capital, Shillong way back in 1987 and subsequently expanded to other district headquarters. Since its inception, NIC has provided a host of services to the State and Central Government organizations in Shillong and other districts in Meghalaya, and now these services include Video-Conferencing, Internet Services, e-mail etc. apart from numerous Online Applications through dedicated Leased Line Circuits.
+
+
+
+1.5 Abbreviations
+
+MSCPCR
+Meghalaya State Commission for Protection of Child Rights
+DCPU
+District Child Protection Unit
+DCPO
+District Child Protection Officer
+CWC
+Child Welfare Committee
+JJB
+Juvenile Justice Board
+CNCP
+Child In Need of Care and Protection
+CCL
+Child in Conflict with the Law
+
+
+Systems – Existing and Proposed 
+
+2.1 Existing System 
+The MSCPCR (Commission) receives reports from three main sources i.e. the District Child Protection Units (DCPU’s); the District Police and from the District Courts.  
+
+These reports pertain to the cases handled by the DCPU on ancillary activities that relate to Child in Conflict with Law (CCL) and Child in Need of Care and Protection (CNCP).  
+
+In the police reports, the data pertain to missing or trafficked children, POCSO Cases and CCL cases are received. The police after conducting their investigation submit Chargesheet to the Courts which then goes for trial.  However, in many cases charges are not brought up and cases stay in limbo for a long duration or cases are resolved without the intervention of the Court.  
+In the event where the cases are forwarded to the Court, the trial stages continue for a long time.  
+
+As per Law, especially while dealing with POCSO Cases, the Police are supposed to complete investigation within 6 Months maximum and the trial courts are to complete the trial process within One Year.  
+
+However, the reality is the MSCPCR while acknowledging receipt of the data does not receive a complete overview of the data but as a piecemeal basis – thus serving only half the purpose.
+
+In the present system the MSCPCR receives these reports on a quarterly/monthly basis in a printed format which are then re-entered into our systems and the data is collated, analyzed and depending on the type of data required, reports are further generated.  
+
+Since the data is submitted from three sources, and in most of the times for a single case there are intersectionalities and redundancies in the data supplied including the data duplicacy.
+  
+The data received by the MSCPCR are sometimes erroneous in nature and requires cross verification for authenticity to ensure data reliability. This present method takes up a lot of valuable resources in terms of man hours and IT systems. 
+  
+The data presented is usually outdated.  A clear and present representation of the data is therefore not available. Since the data cannot be analyzed as a whole - any emerging issues and informed decisions cannot be projected.  This therefore leaves gaps in the reports and studies and trends cannot be properly assessed for use by the Government functioning.
+
+
+
+Proposed System & Product Scope
+
+Web based Application: The product is envisaged as an online database that will be able to provide details of specific cases as well as provide a statistics of the whole database and from which the super user at the Commission - can generate reports for specific fields as per the user requirements.
+
+Limitations: 
+Primary User - with Admin access will be the Commission itself. All other users will be having access - to upload data and view their respective districts data only
+Secondary User - will be the DCPU wherein the records will be manually uploaded at the district level. 
+The Police and Courts data can be pooled from the ecourts and CCTNS 
+
+
+Description of the Web Based Application
+The Commission envisages an Application that will work in all environment (platform independent) for the collation of data from all stakeholders i.e. DCPU’s, Police and Courts.  
+
+The Data pooled together from these three (3) sources will form the basis for the analysis and compiled reports that are for the Commission’s main consumption.  
+
+The Application will enable the DCPU to view the status and progress of the cases that have gone to the police and further on to the courts.  
+
+While some of the Cases will be following the three tier system DCPU → Police → Courts at other times the case will stop at the level of the DCPU itself.
+
+One of the most outstanding issue/problem the existing system faces is the slow processing of data and reporting. Hence there is a need for simplifying the procedures with a view to improving the efficiency of the system. System has multiple stakeholders. Considerable amount of time is wasted when the all these units have to manually enter/upload/compile reports/ analyze/ transact correct data and check for duplicate entries.
+ 
+All information is available in paper form and maintained in the physical files, which are unstructured in nature. This disparate maintenance of information in various physical files brings with it a set of problems/limitations which are prone to such manual systems, such as: It is time consuming to search for information; physical files to be send to-and-fro; files being prone to being misplaced, lost or damaged, and the usual complications of maintaining and analyzing the physical records. 
+
+The Proposed System for “Optimizing Reporting Processes through Digital Transformation of MSCPCR” shall improve the efficiency and accountability in the management operations. The System aims to ease the effort of process management by adapting comprehensive, concerted and planned process management fashion.
+
+The System for Optimizing Reporting Processes through Digital Transformation of MSCPCR will be developed as a web-based application and can be accessed by any authorized users of the MSCPCR Application. The system will be role-based with the application consisting of different levels of users, where each user will have a specific role and the system will organize around the needs of different levels of users. Each role will have different types of activities to be performed. The different levels of users of the system will be follows: -
+
+Officer concerned, MSCPCR – level 1 users
+Level 2 Users of the DCPU, Police, Courts
+Each user will have a username and password to login into the system. Once a user is successfully logged in, user will then be able to perform the activities allotted to them. One user will not be able to view the profile / data of any other user, but only their own profile and information. Thus role-based management of users will take place.
+
+The proposed system will be process driven and will have facility to track the action taken on the reporting at each level of the process flow. This will help in maintaining the transparency of the system, cut down unnecessary time wastage leading to efficiency in Service delivery. Also, this feature will also put the onus and accountability on each stakeholder to do their part in the process flow.
+
+In the proposed system the Information uploaded to the system in the specific formats - will be digitized and stored in a centralized database.
+The broad activities to be digitized (phase-wise) are:
+Creation of users of the concerned Unit of the MSCPCR
+Dashboard for the users
+       Reports on No. of Cases 
+       Convictions
+Role-based processing/ uploading/ compiling/ report generation of the entered data 
+Application form for MSCPCR
+Application form for DCPU 
+Application form for Police 
+Application form for Court 
+Administration
+Maintenance of master data
+Maintenance of users/roles
+Once the users are created, they can login to the system and, after successful login, they are led to a landing page that is customized to their needs and role. This landing page will have a dashboard showing current status of uploaded data (no. of cases, convictions – district-wise, trends analysis).
+
+Level 1 user MSCPCR officials - receives the data from the concerned DCPU’s, Police, Courts and compile various Reports and makes informed decisions. The concerned officers of MSCPCR, DCPU’s, Police, Courts - can login into the system to check on the data uploaded onto the Application – view their data entered, edit – role-based. Reports can be downloaded, printed and further used for Analysis by the MSCPCR. 
+	
+	
+      Dashboard will feature the following:-
+
+
+2.2.2    Work breakup table 
+Project is broken down into different task or modules / activities that need to be accomplished. The process flow, detailed timelines and the work breakup structure of the system is given where the dependencies resources required and estimated completion time of each task is detailed: -
+WORK BREAKUP STRUCTURE
+Task No.
+Task Description
+Task Owner
+Dependency
+Resources Needed
+Estimated Completion
+1
+Initiation Phase: 
+1.1
+Pre-Project implementation Strategy
+NIC
+Acceptance of Project Proposal and receipt of fund
+
+1 month 
+1.2
+Infrastructure Readiness at MSCPCR, Police, Courts, DCPU’s
+MSCPCR
+Infrastructure Readiness at MSCPCR, Police, Courts, DCPU’s
+
+1.3
+Environment Setup
+NIC
+Prior tasks
+
+2
+System Study
+2.1
+Preparation of SRS
+NIC
+Subject to timely receipt of information
+Development team
+1 month
+2.2
+Approval of SRS
+MSCPCR
+Preparation of
+SRS
+
+3
+System Design
+3.1
+Design of Database Schema
+NIC
+SRS
+Development team
+1 month
+3.2
+Design of 
+User Interface
+NIC
+SRS
+Development
+team
+4
+Application Development
+4.1
+Development of
+Application and Security Audit
+NIC
+Approval of
+SRS
+Development
+team
+4 months
+4.2
+Preparation and Vetting of Master & Reference Data in the Database and Trial Run with User data.
+
+Development of Application
+Roll-out team
+5
+Roll-Out of the System:
+5.1
+Go Live
+
+
+Roll-out team
+1 month
+
+
+2.2.3    Project Duration and Major Milestones:
+Sl. No.
+Activities
+Months
+1234561Pre-Project implementation Strategy2Preparation and Approval of SRS3Design of Database Schema4Infrastructure Readiness at MSCPCR5Environment Setup at MSCPCR6Design, Development, Security audit – of Application7Trial Run with User data8Application launch/ Roll-out  & Go LiveTo implement the system as an e-Gov service a system study will be conducted to prepare the system requirement specification (SRS) document based on which the system will be designed and developed.
+
+
+2.2.4    Website :: changes required on the existing Website :  HYPERLINK "https://megscpcr.gov.in" https://megscpcr.gov.in 
+
+ The following are some of the changes that the Commission requires for its present website:
+         USER INTERFACE:
+A change from a static setting to a dynamic setting.
+Colour scheme to fit a child friendly feel - accessible website
+Navigation to be simpler for User friendly experience
+Social Media links to be added
+YouTube channel: https://www.youtube.com/c/TOTHELIGHT_MSCPCR
+Facebook Page link :  HYPERLINK "https://www.facebook.com/Meghalaya-State-Commission-for-the-Protection-of-Child-Rights-104927912084590" https://www.facebook.com/Meghalaya-State-Commission-for-the-Protection-of-Child-Rights-104927912084590 
+NCPCR website link to be included:  HYPERLINK "https://ncpcr.gov.in/" https://ncpcr.gov.in/ 
+
+INFORMATION to be regularly UPDATED:
+Pictures for running image gallery showing activities 
+ABOUT US PAGE 
+Home: Landing Page – may consists of following menu: -
+About the Commission
+Who's 	(Directory)
+ACTS	(PDF’s documents)
+Activities   (Photo Gallery))
+Annual Reports   (Reports)
+In the news  (Highlights) 
+Contact Us		
+
+
+System Design
+Master Data Management 
+The Master Data Management Module of Digitization of MSCPCR aims to create a centralized repository. The master data will be created, managed, and controlled centrally by a MSCPCR administrator to bring about the standardization of data that will be accessed by all the modules of the system. 
+
+This will involve creation and maintenance of lists such as 
+(a)  master list of Users – who will be logging in to the System
+(b)  master data – as uploaded from sites – Police, Courts, DCPU’s 
+
+User Management System:
+
+This module pertains to the management of users, roles, and privileges. The Super Administrator is a user that is responsible for the overall user management of the system. The Super Administrator creates users, manages the different modules, processes, and roles. The Super administrator will manage the different level of users and also manages their privilege and assigns roles according to their assigned area of work. 
+
+
+Process Management System:
+
+This module pertains to the management of processes so as to align with the strategic goal of reporting effectively and efficiently. The system will organize processes in chronological order of the processes, also help in monitoring the processes so they maintain optimal efficiency by spotting the bottlenecks in the system and improve on the service delivery mechanism.
+
+The processes in the system are broadly listed as follows:
+Management of users by the Super Administrator
+Entry/Uploading of the Data 
+Reports Generation 
+Trends Analysis – based on the inputted data
+Reporting System:
+with all the data captured through the system, different types of reports can be generated as per the requirements of the MSCPCR.
+ 
+Dashboard as per stakeholder role
+Report of No. of Cases 
+View the data entered by stakeholders
+Report of Convictions cases
+Any other reports identified during system study and mentioned in the SRS document.
+
+
+  Process Flow of Modules 
+Entry of Data / reports
+  The Level 2 user logs in to the software and initiates entry of the data 
+The basic information being entered are: - 
+Date of ComplaintDate of ReceiptComplainant’s NameName of ChildAgeGender (M/F)Case SummaryDate and Time of IncidentPlace of IncidentAccused relationship with VictimDisability
+ (Y/N)Type of DisabilityCase TypeAction by CWCCase ProgressAddl Info
+
+Management of Profile by Level 1 user
+On logging into the system, the user can manage their profile which will contain their contact details and other information.
+The user can view reports and update/ edit reports, generate reports - as required
+Level 1 user can create the Users – role based 
+The Level 1 user generates Reports – as required 
+Management of Profile by the concerned officer
+On logging into the system, the officer can manage their profile which will contain their contact details and other information.
+The officer can view their inbox, and initiate action on any process as and when it is required. 
+Management of Profile by Level 2 user
+Level 2 user does the entry from their sites 
+They can view the already entered data, edit prior final submission
+
+Deliverables:
+A software application with the features listed in 2.2.1 
+System Requirement Specification Document
+User manual
+Exclusions:
+This proposal does not include the financial components of:
+Security Auditing, which may be recurring on a yearly basis.
+Deployment Infrastructure Costs
+Recurring expenditure on SMS charges etc.
+Assumptions:
+That MSCPCR officers designated/responsible for delivery of the services will be sharing with NIC Project Team all the artifacts like forms, registers format, format of forwarding letter, process flow, format of reports and their corresponding dashboards etc.
+That MSCPCR officers designated/responsible for delivery of the services will provide all necessary information during the system study and SRS preparation phase to the development team of NIC Meghalaya.
+That MSCPCR officers will vet and approve the Systems Requirement Specification (SRS) Document prior to start of development of Application.
+That MSCPCR officers designated/responsible for delivery of the services will test the system designed thoroughly before the Application goes live.
+Concerned Designated Officer / Stakeholders will put in place the necessary ICT infrastructure required.
+As per the Commission’s Chair request, the application would be hosted in public domain (NIC Cloud) and the said application would need to undergo Security Audit. The costs for undergoing the audit will be borne by the MSCPCR.
+In the event that the application is hosted on the cloud, SMS and email alerts may also be incorporated and therefore the Directorate will acquire access to SMS gateway and also complete the required DLT registration on any DLT platform so that SMS notifications can be incorporated into the system.
+
+
+Benefits
+Expected immediate benefits that will be accrued as a result of digitization of the MSCPCR Reporting are:
+To automate the system of reporting – to a large scale for the stakeholders
+To generate a detailed Reports – based on required form and format
+To monitor the application for frequency of reporting from various stakeholders - on a daily, weekly, and monthly basis.
+Derived Benefits
+Easy Upgrades:
+The design of the proposed system is intrinsically not monolithic in nature, therefore any new patches or upgrades developed will be easily incorporated without disrupting the existing users.
+Easy Customizations:
+Care is being taken at design time to ensure enough flexibility in the system so that the system developed is a configurable system i.e., it allows the product to easily adapt to the user’s needs/roles. It also provides opportunities to customize the way data is being stored, displayed, reports generated, infographics etc. 
+Ongoing Cost Savings:
+The proposed system will result in huge cost saving, as it will drastically reduce the various tedious and time-consuming tasks that were being performed manually earlier. 
+Scalability:
+The proposed system is designed such that it can be hosted in a cloud infrastructure and hence can avail the benefits offered in a cloud environment
+Service:
+The proposed system will be designed keeping in mind the possibility of future requirements to digitize other units of the organization into a single software which will enable effective and efficient management of the system by the administrators, users, etc.
+Detailed Architecture
+  Server Architecture
+
+VM Name: Application Server 
+RAM
+16 GB
+Storage
+70 GB
+OS
+Linux
+VM Name: Database Server
+RAM
+16 GB
+Storage
+70 GB
+OS
+Linux
+RDBMS
+PostgreSQL
+As requested by the MSCPCR, the proposed solution shall be deployed in servers located and hosted on the NIC Cloud.
+
+
+5.2    Software and hardware requirements at Client end
+
+Software Requirements for End User:
+Operating System: Windows 7 or higher
+Browser: Google Chrome, Mozilla Firefox, Microsoft Edge
+
+Hardware Requirements for End User:
+Any desktop PC, Tablet, Smart Phones with internet connection.
+
+
+
+     5.3    Proposed Technology Stack
+  All the technologies used are open source; the following technologies are used in the application.
+Front End	: 	HTML5, jQuery, CSS3
+Web Server	: 	Apache	
+Back End	: 	PostgreSQL14.x 
+Framework	:  	Laravel 8
+Implementation Plan 
+
+6.1   Project Governance Structure
+For the smooth implementation of the project, the nodal officers / designated officers from MSCPCR will coordinate with NIC Team to provide software development requirements like application form and process flow. They also would be responsible to test the software and issue feedback / User Acceptance Test
+Software Development Project Team from NIC will consist of Project Head, and Development Team
+SIO NIC Meghalaya will monitor and guide the NIC Project team
+MSCPCR will be the overall project monitoring body
+
+Pre-project Implementation Strategy
+
+Formation of teams comprising of members from the MSCPCR, National Informatics Centre, Meghalaya
+System Analysis and Study
+Define hardware requirements
+
+Implementation Strategy
+Environment Setup, deployment and Configuration.
+Preparation and Vetting of Master data, and Reference Data, in the Database.
+Trial Run of the application with user data.
+User Acceptance Testing
+Preparation of user and administrator manuals.
+Deployment of Production Server. 
+Go Live
+
+   6.4    Challenges/Risks with Mitigation Plan
+Officials may be transferred and new officials may find it difficult to operate the software
+Officials will ensure to train their replacements before leaving the Commission, Units, Sites
+
+
+
+
+
+
+
+Roles and Responsibilities 
+The roles and responsibilities of all the stakeholders to be defined in detail. 
+MSCPCR:
+To share with NIC the detailed process flow, application format, documents / enclosures to be submitted by applicants etc.
+To test the software application and provide feedback, user acceptance before going live
+To attend Master Trainers Training programs to be conducted by NIC
+To take ownership of the software application and to operate once it is deployed
+The MSCPCR will verify the software and issue UAT letter before going live.
+Must have systems and internet connectivity installed. Also, all other requirements, like Printers, Scanners, etc. should be made available.
+NIC:
+To study the detailed process flow, application format, documents / enclosures to be submitted by applicants etc. received from all the stakeholders
+Design and develop the software application
+Design and develop the reports
+Demonstrate the software application to the stakeholders and obtain feedback
+Incorporate changes and finally obtain User Acceptance Report from the MSCPCR
+Train the officers’ / master trainers of MSCPCR
+Implement the software after incorporating any changes required
+Hand holding support to MSCPCR for a period of 2 months and hand over the project to MSCPCR
+
+
+ Project Cost
+
+Sl. No.
+Resource Details
+Estimated Man units
+Estimated Months Units
+Estimated Man-Months Units
+Approx. Unit Cost (Rs.)
+Total Cost (Rs.)
+Manpower cost as per current NICSI rates
+1
+Developer 
+1
+12
+12
+50,000
+6,00,000.0
+Miscellaneous : Training, Travel Allowance
+30,000.00
+Security Audit (application hosting in the NIC Cloud - approx)
+100000
+1,00,000
+Grand Total Cost for Project (i + ii + iii)
+7,30,000.0
+                             Total cost of the Project if hosted in the cloud is ₹7,30,000 (Seven Lakhs, Thirty thousand).
+
+Conclusion
+The implementation of “Optimizing Processes through Digital Transformation of MCSPCR”, Government of Meghalaya will help the MCSPCR to be able to maintain equitable distribution of tender notices. The system will ease the effort of data and process management by adapting a comprehensive, concerted, and planned management fashion using ICT tools. It will assist the MSCPCR to manage their daily office functioning in a much more efficient manner.
+
+The implementation of an automated system for processing Reports from various stakeholders - will improve the efficiency, accuracy, and transparency. It will also reduce administrative workload and optimize resource allocation. We believe that this project will significantly benefit the MSCPCR - and we recommend its implementation.
+
+
+===============================***======================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Annexure 1
+
+
+
+1.5    FLOW DIAGRAM of the Application Requirements :-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ After Login: Display will Show the District Case Status in a tabular format (in the case of Police)
+
+
+
+
+
+
+
+
+Annexure 2
+
+
+District Name
+Police StationFir No. With Sec. of LawDate of FIRReferred to CWCDate of Medical ExaminationTime taken to file ChargesheetCase Status
+
+
+
+
+
+
+
+In the Case of DCPU
+Districts Name:
+Sl. No.Date of ComplaintDate of ReceiptComplainant’s NameName of ChildAgeGender (M/F)Case SummaryDate and Time of IncidentPlace of IncidentAccused relationship with VictimDisability
+ (Y/N)Type of DisabilityCase TypeAction by CWCCase ProgressAddl Info
+
+
+
+
+
+
+
+In the Case of Courts
+District Name : 
+State VsCase No. with Sec. of LawDate of Last HearingHearing  judgementStage of Trial (P/A/C)Victim Compensation awarded   (I/F/N)Date of AwardAmount Awarded
+Each User will have viewing and data entry rights only – for respective office and district
+MSCPCR will have Admin rights - Read, Write, Edit (Append) of all fields
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Annexure 3
+
+District Name
+Sl. No.Date of ComplaintDate of ReceiptComplainant’s NameName of ChildAgeGender (M/F)Case SummaryDate and Time of IncidentPlace of IncidentAccused relationship with VictimDisability (Y/N)Type of DisabilityCase TypeAction by CWCCase ProgressAddl Info
+Drop Down Box  Options	
+Disposed
+Under Supervision
+Transferred
+Drop Down Box  Options	
+SIR
+Counselling
+Medical Exam
+Mental Assessment
+Institutional Care
+Non-Instt Care
+Sponsorship
+Foster Care
+After Care 
+Adoption
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+Annexure 4
+
+
+DCPU Entry
+Sl. No.Date of ComplaintDate of ReceiptComplainant’s NameName of ChildAgeGender (M/F)Case SummaryDate and Time of IncidentPlace of IncidentAccused relationship with VictimDisability (Y/N)Type of DisabilityCase TypeAction by CWCCase ProgressAddl Info
+
+Police Entry
+
+Police StationFir No. With Sec. of LawDate of FIRReferred to CWCDate of Medical ExaminationTime taken to file ChargesheetCase Status
+
+POCSO Judge
+
+State VsCase No. with Sec. of LawDate of Last HearingHearing  judgementStage of Trial (P/A/C)Victim Compensation awarded   (I/F/N)Date of AwardAmount Awarded
+MSCPCR
+
+Remarks
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Annexure 5 
+
+OVERALL Flow – process for the Web Application Annexures
+Annexure 6: Terms of Use
+[These terms of use need to be accepted by the user]
+Terms of Use (ToU) 
+Written Communication: User department should specify its requirements about IT Application preferably by formal communication in detail. User department should provide feedback on the adopted models, documents, demonstrative systems, and presentations etc., made by NIC, within a week or a reasonable time frame as agreed upon mutually. After which, the steps and stages of various project life cycles will get finalized for subsequent stages.
+Timely Feedback: In the initial requirement gathering phase of the IT application, the efforts should be to capture the maximum of User content and business processes, so that there is least requirement change after phase 3 of the IT Application i.e. As-IS System Analysis to To-Be System Design. 
+Default Clause: In the absence of written feedback, it shall be presumed that User has accepted the system designed by NIC and to save time and cost overruns no further feedback shall be considered.
+Additional Cost & Time: Under special circumstances, if any delayed feedback or modifications to already finalized model or released system are requested, the User Department may have to incur additional cost and time. 
+Data and Business Process Ownership: The Ownership of stored Data, entire transactional data, content data, validations and business rules/ functional requirements belong to the User department.
+No Data Access to NIC: NIC will not keep access rights of the actual data inserted/generated in the IT Application of User department. The real-time actual implementation and operation of the IT Application will be the prime responsibility of the user department. The User Department shall nominate an officer who has the complete and exclusive access to the stored data. This officer can be trained by the NIC Project Team for this purpose.
+
+Technical Artefact Ownership:
+General Version
+NIC will own/hold the Intellectual Property Rights to and associated with all the artefacts developed/produced under this project and shall have the full right to modify the technical artefacts for own use and/or use by other Departments at all levels of Government.  
+NIC shall have the rights to publish and build its own brand image, to claim award(s)/felicitation(s) and submit related technical papers for its intellectual property.  
+Users shall have the perpetual right to use the same within the department. For making any changes in the artefacts, the user needs to acknowledge the contribution of NIC and obtain the consent of NIC. However, NIC will not be bound to compulsorily give such a consent to change NIC-developed artefacts by the user or any third party. 
+OR
+Version for NIC products like e-office, eHospital, GepNIC, ServicePlus, S3WAAS, eHRMS, etc.
+As this is an NIC product, NIC will own/hold and will continue to own/hold the Intellectual Property Rights to and associated with all the artefacts being used in this project and shall have the full right to modify the technical artefacts for own use and/or use by other Departments/users at all levels of Government.  
+NIC shall have the rights to publicize to build its own brand image, to claim award(s)/felicitation(s) and submit related technical papers for its intellectual property.   
+NIC shall have the complete rights to change or customize the product. Users will not have any rights or claims to change the artefacts by themselves or any third party appointed by them.
+Users shall have the right to use the same within the department as per the MoU and/or T&C. However, in case of change or loss in User identity through merger, acquisition, abolishment, disinvestment, etc., except only name change, the right to use the artefacts will cease to exist. The use of NIC artefacts by the New entity shall be governed by the existing IPR policy of NIC.  
+In case of international cooperation, NIC’s IPR rights will be in accordance with and governed by the MoUs entered by MEA/MeitY with the recipient entity/country.
+ RTI queries: All RTI queries related to the IT Application are to be answered by the User department. If any technical queries are there, NIC may provide inputs to the Nominated/ designated officer of the department, provided it is technically feasible.
+Queries from law enforcing, auditing and Regulatory Functionaries: All queries from Government law enforcing, auditing and Regulatory agencies related to the Project IT Application are to be answered by the User department. NIC shall not be responsible to answer any such queries. The User department should envisage the reports and output required from the IT Application in advance, which will become the part of the IT Application. NIC can help in preparation of exceptional reports in the IT Application to answer such queries by the Nominated/ designated official of the User department.
+Cleaning of Sample/test Data: The NIC uses sample/test data for IT Application engineering activities, it is the responsibility of the User to clean the sample data before go-live so that there will not be any harm or legal issues due to sample data. 
+Indemnification: NIC should be indemnified from all legal and associated consequences arising due to the usage of the IT application.
+Sensitization of Govt. Laws. Acts/ Rules and Regulations: User department should give due consideration to sensitize themselves with existing various Government Laws/Acts/ Rules and Regulations such as IT Act 2000, IT Act 2008 (Amendment), IT Rules 2011, Aadhaar Act 2016, Cyber Security Laws, Role of Cert-in, Sensitive Personal Data Information Rules and Privacy of Personal Data etc. issued by Government of India from time to time. 
+I,…………………………………………………………………………… designation …………………………………… hereby declare on behalf of Department/Organization................................................................ Ministry/State..................................………………………………………………that I have gone through the clauses mentioned herein under the Annexure – I i.e. Terms of Use (ToU) for using NIC ICT Services and in capacity of Project-in-charge/Nodal Officer undertake to abide by the above clauses i.e. 1 to 12 with best of my belief and knowledge for the Project IT Application.……………………………………………………………
+
+(Signature of Project In-charge/ Nodal Officer)
+	Official Stamp	
+Name:
+Email ID:
+                                                                                       Telephone:                       Mobile No:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+User Name : 
+Password   :   
+
+Drop Down Box
+Displaying The District Name and User
+(a) East Garo Hills Police (EGHPOL)
+(b) East Garo Hills DCPU (EGHDCPU)
+(c) East Garo Hills District Court (EGHCourt)
+
+
+Passwords will be assigned by the Admin / NIC
+
+Case Progress
+
+Additional Actions taken
+
+
+

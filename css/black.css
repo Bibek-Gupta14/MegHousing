@@ -1,0 +1,252 @@
+/* 
+   High Contrast Black Theme (GIGW Compliant)
+   Overrides ONLY colors via CSS Variables
+   Applied when <html data-theme="black">
+*/
+
+html[data-theme="black"] {
+	/* Main Palette Re-map -> Black/Yellow */
+	--primary-color: #ffff00;
+	/* Standard Green -> Yellow */
+	--primary-dark: #e6e600;
+	/* Dark Green -> Darker Yellow */
+	--primary-light: #ffff33;
+	/* Light Green -> Brighter Yellow */
+
+	--secondary-color: #ffff00;
+	/* Charcoal Text -> Yellow */
+	--text-muted: #ffff00;
+	/* Muted Text -> Yellow */
+
+	--accent-color: #ffff00;
+	/* Gold -> Yellow */
+	--accent-hover: #ffffff;
+	/* Hover -> White */
+
+	/* Backgrounds */
+	--bg-body: #000000;
+	/* Light Grey -> Black */
+	--bg-white: #000000;
+	/* White -> Black */
+	--bg-nav: #000000;
+	/* Navy Nav -> Black */
+
+	/* Borders & Shadows */
+	/* Replace shadows with solid borders for high contrast visibility */
+	--shadow-sm: 0 0 0 1px #ffff00;
+	--shadow-card: 0 0 0 1px #ffff00;
+	--shadow-hover: 0 0 0 2px #ffff00;
+}
+
+/* Force overrides for elements that might not fully use vars or need specific tweaks */
+html[data-theme="black"] body,
+html[data-theme="black"] h1,
+html[data-theme="black"] h2,
+html[data-theme="black"] h3,
+html[data-theme="black"] h4,
+html[data-theme="black"] h5,
+html[data-theme="black"] p,
+html[data-theme="black"] span,
+html[data-theme="black"] div,
+html[data-theme="black"] a,
+html[data-theme="black"] li {
+	background-color: transparent;
+	/* Rely on container backgrounds */
+	color: #ffff00 !important;
+	border-color: #ffff00 !important;
+}
+
+/* Ensure links are distinct if needed, but in HC Black usually all yellow is fine */
+html[data-theme="black"] a {
+	text-decoration: underline;
+	color: #ffff00;
+}
+
+html[data-theme="black"] a:hover {
+	background-color: #ffff00 !important;
+	color: #000000 !important;
+}
+
+/* Specific Component Fixes - Backgrounds */
+html[data-theme="black"] .main-header,
+html[data-theme="black"] .header-display,
+html[data-theme="black"] .hero-section,
+html[data-theme="black"] .service-card,
+html[data-theme="black"] .footer-bottom,
+html[data-theme="black"] .header_top,
+html[data-theme="black"] .important-links-strip,
+html[data-theme="black"] .gov-branding,
+html[data-theme="black"] .access-tools,
+html[data-theme="black"] .services-section,
+html[data-theme="black"] .main-wrapper,
+html[data-theme="black"] .notice-board-container,
+html[data-theme="black"] .notice-header,
+html[data-theme="black"] .notice-body,
+html[data-theme="black"] .notice-item,
+html[data-theme="black"] .notice-date,
+html[data-theme="black"] .font-control,
+html[data-theme="black"] .contrast-swatch,
+html[data-theme="black"] .main-footer {
+	background-color: #000000 !important;
+	background: #000000 !important;
+	/* Force override gradients */
+	border-color: #ffff00 !important;
+	color: #ffff00 !important;
+	box-shadow: none !important;
+}
+
+/* Explicit Swatch Overrides */
+html[data-theme="black"] .swatch-default {
+	background-color: #15803d !important;
+	/* Green */
+	border-color: #ffff00 !important;
+}
+
+html[data-theme="black"] .swatch-black {
+	background-color: #000000 !important;
+	/* Black */
+	border-color: #ffff00 !important;
+}
+
+html[data-theme="black"] .swatch-white {
+	background-color: #ffffff !important;
+	/* White */
+	border-color: #ffff00 !important;
+}
+
+html[data-theme="black"] .service-card {
+	border: 1px solid #ffff00;
+	text-decoration: none !important;
+}
+
+/* Specific Component Fixes - Text Color overrides */
+/* User requested white text inside service cards */
+html[data-theme="black"] .service-card h4,
+html[data-theme="black"] .service-card p {
+	color: #ffffff !important;
+}
+
+/* Icon Readability Fix */
+html[data-theme="black"] .service-icon {
+	background-color: #000000 !important;
+	/* Dark background */
+	border: 1px solid #ffff00 !important;
+	/* Yellow border for shape */
+}
+
+html[data-theme="black"] .service-icon i {
+	color: #ffff00 !important;
+	/* Yellow Icon */
+}
+
+html[data-theme="black"] .service-card:hover .service-icon {
+	background-color: #ffff00 !important;
+	border-color: #ffffff !important;
+}
+
+html[data-theme="black"] .service-card:hover .service-icon i {
+	color: #000000 !important;
+}
+
+
+/* Notification Board Specifics */
+html[data-theme="black"] .notice-header h3,
+html[data-theme="black"] .view-all,
+html[data-theme="black"] .notice-link {
+	color: #ffff00 !important;
+	background-color: transparent !important;
+}
+
+html[data-theme="black"] .notice-date {
+	border: 1px solid #ffff00 !important;
+}
+
+/* Text Size Buttons */
+html[data-theme="black"] .font-control {
+	border: 1px solid #ffff00 !important;
+	color: #ffff00 !important;
+}
+
+html[data-theme="black"] .font-control:hover {
+	background-color: #ffff00 !important;
+	color: #000000 !important;
+}
+
+
+/* Hover state for cards - optional, but let's keep text readable */
+html[data-theme="black"] .service-card:hover h4,
+html[data-theme="black"] .service-card:hover p {
+	color: #000000 !important;
+	/* Invert on hover if the bg becomes yellow (via a:hover) */
+}
+
+/* Fix for marquee/slider stripe if present styling is separate */
+html[data-theme="black"] .marquee-container,
+html[data-theme="black"] .slider-track {
+	background-color: #000000 !important;
+}
+
+html[data-theme="black"] .main-navbar {
+	background-color: #000000 !important;
+	border-bottom: 2px solid #ffff00;
+}
+
+html[data-theme="black"] .top_nav li a,
+html[data-theme="black"] .nav-menu li a {
+	color: #ffff00 !important;
+}
+
+html[data-theme="black"] .btn-primary,
+html[data-theme="black"] .btn-secondary {
+	background-color: #000000 !important;
+	color: #ffff00 !important;
+	border: 1px solid #ffff00 !important;
+}
+
+html[data-theme="black"] .btn-primary:hover,
+html[data-theme="black"] .btn-secondary:hover {
+	background-color: #ffff00 !important;
+	color: #000000 !important;
+}
+
+/* Important Links - High Visibility */
+html[data-theme="black"] .important-links-track img {
+	filter: none !important;
+	opacity: 1 !important;
+}
+
+/* Carousel Nav Buttons */
+html[data-theme="black"] .carousel-btn {
+	color: #ffff00 !important;
+}
+
+html[data-theme="black"] .carousel-btn:hover {
+	transform: scale(1.2);
+}
+
+/* ADDED: Top Border for Navbar */
+html[data-theme="black"] .main-navbar {
+	border-top: 2px solid #ffff00 !important;
+}
+
+/* Mobile Menu Background Override */
+@media (max-width: 900px) {
+	html[data-theme="black"] .nav-menu {
+		background-color: #000000 !important;
+		border-bottom: 2px solid #ffff00;
+	}
+
+	html[data-theme="black"] .nav-menu li {
+		border-bottom: 1px solid #ffff00 !important;
+		/* Yellow dividers */
+	}
+
+	html[data-theme="black"] .nav-menu li:first-child {
+		border-top: 1px solid #ffff00 !important;
+	}
+}
+
+/* Mobile Hamburger Icon Visibility */
+html[data-theme="black"] .bar {
+	background-color: #ffff00 !important;
+}
