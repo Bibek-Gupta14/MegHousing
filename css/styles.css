@@ -35,9 +35,12 @@
     --spacing-md: 2rem;
 
     /* Shadows & Radius */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* PHASE 4: Flattened shadows reduce visual fatigue.
+       Cards now rely on a solid border + subtle shadow instead
+       of a deep multi-layer elevation effect. */
+    --shadow-sm:    0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-card:  0 1px 3px 0 rgba(0, 0, 0, 0.07);
+    --shadow-hover: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
     --radius-card: 8px;
     --radius-btn: 6px;
 }
@@ -216,7 +219,7 @@ img {
 
 .banner-img {
 
-    height: auto;
+    height: 145px;
     max-width: 100%;
     display: block;
 }
@@ -362,8 +365,9 @@ img {
 /* Hero Section (Split Layout) */
 .hero-section {
     background-color: #fff;
-    padding: 40px 80px 20px 80px;
-    /* Reduced bottom padding to 20px */
+    /* PHASE 4: Standardised top & bottom padding to 32px for consistent
+       section rhythm. Matches the 32px used in .services-section below. */
+    padding: 32px 80px;
     border-bottom: 1px solid #e5e7eb;
 }
 
@@ -749,10 +753,10 @@ img {
 /* Services Grid Section */
 /* Services Grid Section */
 .services-section {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    /* PHASE 4: Standardised to 32px top/bottom to match hero-section rhythm. */
+    padding-top: 32px;
+    padding-bottom: 32px;
     background-color: #f3f4f6;
-    /* Restored grey contrast as body is now white */
 }
 
 .section-title h3 {
@@ -778,9 +782,12 @@ img {
     background: #fff;
     padding: 20px 15px;
     border-radius: var(--radius-card);
+    /* PHASE 4: Replaced invisible transparent border + heavy shadow with a
+       visible hairline border. This gives cards clear separation without the
+       visual weight of a deep drop-shadow, reducing fatigue for all users. */
+    border: 1px solid #e5e7eb;
     box-shadow: var(--shadow-card);
     text-align: center;
-    border: 1px solid transparent;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
@@ -789,14 +796,13 @@ img {
     position: relative;
     overflow: hidden;
     flex: 1;
-    /* Distribute space evenly */
     min-width: 200px;
-    /* Prevent crushing */
 }
 
-/* Hover Effect: Lift & Border */
+/* Hover Effect: Subtle Lift & Green Border */
 .service-card:hover {
-    transform: translateY(-5px);
+    /* PHASE 4: Reduced lift from 5px to 3px — noticeable but not jarring. */
+    transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
     border-color: var(--primary-light);
     text-decoration: none;
@@ -861,6 +867,8 @@ img {
     /* Reduced from 30px 0 */
     border-top: 1px solid #d1d5db;
     border-bottom: 1px solid #d1d5db;
+    /* PHASE 5: Contain repaints to this strip only. */
+    contain: layout paint;
 }
 
 .carousel-container {
@@ -1002,6 +1010,9 @@ img {
     background-color: #f3f4f6;
     border-bottom: 4px solid #f97316;
     /* Accent color separator */
+    /* PHASE 5: contain:layout paint isolates this section's repaints.
+       Prevents expensive full-page layout recalculations on slide change. */
+    contain: layout paint;
     position: relative;
     overflow: hidden;
 }
@@ -1009,8 +1020,10 @@ img {
 .gallery-slider {
     position: relative;
     width: 100%;
-    /* Fixed height for desktop banner style */
-    height: 450px;
+    /* Expanded height to push the Welcome section down below the fold.
+       Calculates 100% of viewport height minus approx header/nav height (~250px). */
+    height: calc(98vh - 250px);
+    min-height: 450px;
     overflow: hidden;
     background: #000;
 }
@@ -1877,4 +1890,162 @@ table.responsive tr:hover {
 
 .category-card:hover .card-action i {
     margin-left: 10px;
+}
+
+/* ==========================================================================
+   PHASE 5 — Performance, CLS Prevention & Low-Bandwidth Optimisation
+   All rules here are additive — no existing rules are changed.
+   ========================================================================== */
+
+/* ---------------------------------------------------------
+   Notification Board — CLS Prevention
+   Reserve vertical space before JS populates the list.
+   Without this, the board collapses to 0 height and the
+   page jumps when loadNotifications() fires (CLS bug).
+   4 items × ~82px per item = ~328px reserved.
+--------------------------------------------------------- */
+#home-notice-list {
+    min-height: 328px;
+    /* Smooth transition when content fills in */
+    transition: min-height 0.2s ease;
+}
+
+/* Once JS has loaded items, .loaded class is added and
+   the reservation is released to natural content height */
+#home-notice-list.loaded {
+    min-height: 0;
+}
+
+/* Reduce reservation on mobile (fewer pixels, less blank space during load) */
+@media (max-width: 900px) {
+    #home-notice-list {
+        min-height: 200px;
+    }
+}
+
+/* ---------------------------------------------------------
+   Services Section — Paint Containment
+   Isolates this section from full-page repaints triggered
+   by card hover transforms on low-end devices.
+--------------------------------------------------------- */
+.services-section {
+    contain: layout paint;
+}
+
+/* ---------------------------------------------------------
+   Mobile Responsive Fixes (Phase 3 rules reinstated)
+   These were in responsive.css which has been removed.
+   Critical rules for mobile usability are kept here.
+--------------------------------------------------------- */
+
+/* Prevent horizontal scroll on all pages */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+body > * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 900px) {
+    /* Hero section responsive padding */
+    .hero-section {
+        padding: 24px 16px;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    /* Services: 3-column on tablet/mobile */
+    .services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px;
+        padding: 0 12px;
+    }
+    .service-card {
+        min-width: unset;
+        padding: 14px 10px;
+    }
+    .service-card h3 { font-size: 0.85rem; }
+    .service-card p  { font-size: 0.75rem; }
+
+    /* Nav padding reset */
+    .nav-container {
+        padding: 0 20px;
+        justify-content: space-between;
+    }
+
+    /* Notice board: flex on mobile */
+    .notice-item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        min-width: 0;
+        max-width: 100%;
+    }
+    .notice-content {
+        min-width: 0;
+        overflow: hidden;
+    }
+    .notice-link {
+        word-break: break-word;
+        overflow-wrap: break-word;
+    }
+    .notice-date { flex-shrink: 0; }
+
+    /* Slider height */
+    .gallery-slider { height: 220px; min-height: 220px; }
+
+    /* Important links strip */
+    .important-links-track a {
+        flex: 0 0 120px;
+        height: 52px;
+    }
+
+    /* Header banner */
+    .main-header .header-display { padding: 0 12px; }
+}
+
+@media (max-width: 420px) {
+    /* Very small phones: 2-col services */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+        padding: 0 10px;
+    }
+    .gallery-slider { height: 180px; min-height: 180px; }
+}
+
+/* Touch tap target: font controls and contrast swatches */
+@media (max-width: 768px) {
+    .font-control {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 9px;
+    }
+    .contrast-swatch {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 12px;
+        background-clip: content-box;
+        box-sizing: border-box;
+    }
+    .menu-toggle {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    .nav-menu li a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    .footer-links a {
+        padding: 4px 8px;
+        display: inline-flex;
+        align-items: center;
+    }
+    .inner-page-container { padding: 0 14px; }
 }

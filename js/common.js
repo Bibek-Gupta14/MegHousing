@@ -24,6 +24,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function () {
             navMenu.classList.toggle('active');
+            // PHASE 1 FIX: Update aria-expanded to reflect open/closed state
+            // WCAG 4.1.2 — Name, Role, Value: interactive controls must expose their state
+            var isExpanded = navMenu.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', String(isExpanded));
+        });
+
+        // PHASE 1 FIX: Close menu when Escape key is pressed
+        // WCAG 2.1.1 — Keyboard: all functionality available via keyboard
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.focus(); // Return focus to toggle button
+            }
         });
     }
 

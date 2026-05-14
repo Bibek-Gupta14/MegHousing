@@ -61,6 +61,11 @@ function loadNotifications(containerId, limit) {
         container.appendChild(clone);
     });
 
+    // PHASE 5: Mark list as loaded so CSS releases the reserved min-height.
+    // The #home-notice-list.loaded rule sets min-height:0, allowing the
+    // list to collapse to its natural content height now that items are rendered.
+    container.classList.add('loaded');
+
 }
 
 /**

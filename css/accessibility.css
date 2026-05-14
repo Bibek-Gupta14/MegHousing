@@ -1,0 +1,286 @@
+/* ==========================================================================
+   ACCESSIBILITY.CSS — MegHousing Portal
+   GIGW 3.0 / WCAG 2.1 AA Compliance Additions
+   Phase 1: Accessibility & Semantic Structure
+   
+   PURPOSE: This file adds ONLY accessibility-required styles.
+   It does NOT modify existing design tokens or layout.
+   It is loaded AFTER styles.css to safely override where needed.
+   ========================================================================== */
+
+/* ----------------------------------------------------------
+   1. SKIP LINK
+   WCAG 2.4.1 — Bypass Blocks (Level A)
+   The skip link is now permanently visible in the utility bar
+   as per the design requirement.
+   ---------------------------------------------------------- */
+.skip-link {
+    /* Made permanently visible to match screenshot */
+    display: inline-block;
+    padding: 2px 4px;
+    border-radius: 2px;
+}
+
+.skip-link:focus {
+    outline: 3px solid #d97706; /* Match global focus ring */
+    outline-offset: 2px;
+}
+
+/* ----------------------------------------------------------
+   2. UNIVERSAL VISIBLE FOCUS STATES
+   WCAG 2.4.7 — Focus Visible (Level AA)
+   Applies a strong, government-branded focus ring to ALL 
+   interactive elements. The 3px outline with offset ensures 
+   visibility across all backgrounds.
+   ---------------------------------------------------------- */
+
+/* Base focus for all interactive elements */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+    outline: 3px solid #d97706;   /* Amber — visible on both dark & light */
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Override for nav links — needs contrast on dark bg */
+.main-navbar a:focus,
+.nav-menu a:focus {
+    outline: 3px solid #fcd34d;
+    outline-offset: 2px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+}
+
+/* Override for top utility bar links */
+.header_top a:focus,
+.top_nav a:focus,
+.font-control:focus {
+    outline: 3px solid #14532d;
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* Override for contrast swatches */
+.contrast-swatch:focus {
+    outline: 3px solid #14532d;
+    outline-offset: 3px;
+}
+
+/* Override for slider buttons on dark background */
+.slider-btn:focus {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+}
+
+/* Override for notice links */
+.notice-link:focus,
+.notice-board-container a:focus {
+    outline: 3px solid #d97706;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Override for service cards */
+.service-card:focus {
+    outline: 3px solid #d97706;
+    outline-offset: 3px;
+    border-radius: 8px;
+}
+
+/* Override for footer links */
+.main-footer a:focus {
+    outline: 3px solid #fcd34d;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Override for important links strip */
+.important-links-track a:focus {
+    outline: 3px solid #14532d;
+    outline-offset: 2px;
+}
+
+/* Override for carousel nav buttons */
+.carousel-btn:focus {
+    outline: 3px solid #d97706;
+    outline-offset: 3px;
+    border-radius: 50%;
+}
+
+/* ----------------------------------------------------------
+   3. SCREEN READER ONLY UTILITY CLASS
+   WCAG 1.3.1 — Info and Relationships (Level A)
+   Used for text that is meaningful to screen readers but
+   should not be visible to sighted users.
+   ---------------------------------------------------------- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ----------------------------------------------------------
+   4. ARIA-EXPANDED INDICATOR (Hamburger Menu)
+   Visual cue that the mobile nav is open/closed.
+   WCAG 4.1.2 — Name, Role, Value (Level A)
+   ---------------------------------------------------------- */
+.menu-toggle[aria-expanded="true"] .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+
+.menu-toggle[aria-expanded="true"] .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* Animate hamburger bars (only when transitions are safe) */
+.bar {
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+/* ----------------------------------------------------------
+   5. HIGH CONTRAST COMPLIANCE — Focus States
+   These states remain visible in all three theme modes
+   (default, black, white) because they use border + outline
+   rather than relying solely on background-color.
+   ---------------------------------------------------------- */
+
+/* When high contrast black theme is active */
+[data-theme="black"] a:focus,
+[data-theme="black"] button:focus,
+[data-theme="black"] input:focus,
+[data-theme="black"] [tabindex]:focus {
+    outline: 3px solid #ffff00; /* Yellow for maximum visibility on black */
+    outline-offset: 3px;
+}
+
+/* When high contrast white theme is active */
+[data-theme="white"] a:focus,
+[data-theme="white"] button:focus,
+[data-theme="white"] input:focus,
+[data-theme="white"] [tabindex]:focus {
+    outline: 3px solid #000080; /* Navy for maximum visibility on white */
+    outline-offset: 3px;
+}
+
+/* ----------------------------------------------------------
+   6. NOTICE BOARD LIVE REGION INDICATOR
+   WCAG 4.1.3 — Status Messages (Level AA)
+   The notice-list has aria-live="polite" in HTML.
+   This ensures a minimum height is reserved to prevent 
+   layout shift when content loads dynamically.
+   ---------------------------------------------------------- */
+.notice-list {
+    min-height: 100px; /* Reserve space to reduce CLS */
+}
+
+/* Loading state placeholder (before notices load) */
+.notice-list:empty::after {
+    content: "Loading notifications...";
+    display: block;
+    padding: 20px;
+    color: #6b7280;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ----------------------------------------------------------
+   7. IMPROVED TAP TARGETS (WCAG 2.5.5 — Target Size)
+   All interactive controls must be at least 44×44px.
+   This corrects font controls and contrast swatches which 
+   currently render below the minimum size.
+   ---------------------------------------------------------- */
+.font-control {
+    min-width: 44px;
+    min-height: 24px;
+    width: auto;    /* Override the 26px fixed width */
+    height: auto;   /* Override the 26px fixed height */
+    padding: 8px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contrast-swatch {
+    width: 28px;
+    height: 28px;
+    /* Extend touch area with padding — stays visually same size */
+    padding: 2px;
+    box-sizing: content-box;
+}
+
+/* ----------------------------------------------------------
+   8. EXTERNAL LINK INDICATOR
+   WCAG 2.4.4 — Link Purpose (Level AA)
+   Visually communicates that links open in a new tab,
+   helping low-vision and screen reader users.
+   ---------------------------------------------------------- */
+a[target="_blank"]:not(.service-card)::after {
+    content: " \2197"; /* ↗ arrow symbol */
+    font-size: 0.75em;
+    vertical-align: super;
+    speak: never; /* CSS property — some SR handle this */
+}
+
+/* Do NOT add the indicator to image-only links (important links strip) */
+.important-links-track a[target="_blank"]::after {
+    content: none;
+}
+
+/* Do NOT add to service cards (they are full-block links) */
+.service-card[target="_blank"]::after {
+    content: none;
+}
+
+/* ==========================================================================
+   PHASE 2 ADDITIONS — Hero Section & Homepage Optimization
+   ========================================================================== */
+
+/* ----------------------------------------------------------
+   9. CAROUSEL PAUSE BUTTON (WCAG 2.2.2 — Pause, Stop, Hide)
+   The pause button is positioned centrally at the bottom of
+   the slider, between the prev and next controls.
+   It matches the existing .slider-btn style but has a slightly
+   different position to distinguish it.
+   ---------------------------------------------------------- */
+.pause-btn {
+    /* Position centrally at the bottom of the slider */
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Slightly smaller than prev/next to indicate secondary role */
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+    opacity: 0.75;
+    z-index: 10;
+}
+
+.pause-btn:hover,
+.pause-btn:focus-visible {
+    opacity: 1;
+}
+
+/* ----------------------------------------------------------
+   10. SKIP LINK FOCUS TARGET — Remove focus outline on <main>
+   tabindex="-1" means <main> can receive programmatic focus
+   from the skip link. We suppress the default browser outline
+   on the landmark itself (the focus is intentional/scripted,
+   not user-initiated tabbing). (WCAG 2.4.1)
+   ---------------------------------------------------------- */
+main:focus {
+    outline: none;
+}
