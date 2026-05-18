@@ -2,7 +2,7 @@
 
 ## Directorate of Housing, Government of Meghalaya
 
-![MegHousing Banner](/MegHousing/images/header.png)
+![MegHousing Banner](/images/header.png)
 
 > **Modernizing Public Services: A Responsive, Accessible, and Compliant Government Portal**
 
