@@ -35,9 +35,12 @@
     --spacing-md: 2rem;
 
     /* Shadows & Radius */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    /* PHASE 4: Flattened shadows reduce visual fatigue.
+       Cards now rely on a solid border + subtle shadow instead
+       of a deep multi-layer elevation effect. */
+    --shadow-sm:    0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-card:  0 1px 3px 0 rgba(0, 0, 0, 0.07);
+    --shadow-hover: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
     --radius-card: 8px;
     --radius-btn: 6px;
 }
@@ -216,7 +219,7 @@ img {
 
 .banner-img {
 
-    height: auto;
+    height: 145px;
     max-width: 100%;
     display: block;
 }
@@ -362,8 +365,9 @@ img {
 /* Hero Section (Split Layout) */
 .hero-section {
     background-color: #fff;
-    padding: 40px 80px 20px 80px;
-    /* Reduced bottom padding to 20px */
+    /* PHASE 4: Standardised top & bottom padding to 32px for consistent
+       section rhythm. Matches the 32px used in .services-section below. */
+    padding: 32px 80px;
     border-bottom: 1px solid #e5e7eb;
 }
 
@@ -505,7 +509,9 @@ img {
 .content-body .page-notice-list {
     list-style: none;
     padding: 0;
-    margin: 0 -20px 1.5rem -20px;
+    /* Removed negative margins — they cause content to overflow/clip on iPad widths
+       (768–820px) when combined with overflow-x:hidden on the body. */
+    margin: 0 0 1.5rem 0;
 }
 
 .notice-item {
@@ -569,41 +575,43 @@ img {
     }
 }
 
-/* Desktop Horizontal Layout Fix */
+/* Desktop/Tablet Horizontal Layout — Notice Items */
+/* Applied from 768px upwards (iPad Mini, iPad Air, desktop) */
 @media (min-width: 768px) {
     .notice-item {
-        /* Align Date | Content in a strict grid */
         display: grid;
-        grid-template-columns: 85px 1fr;
-        gap: 20px;
+        /* minmax prevents the date column from causing overflow on iPad.
+           Using minmax(70px,85px) instead of fixed 85px keeps it robust. */
+        grid-template-columns: minmax(70px, 85px) 1fr;
+        gap: 16px;
         align-items: start;
-        /* Align to top like mobile often does, or center? User said "exact same as mobile" */
-        width: 100%;
+        /* Do NOT set width:100% here — it conflicts with max-width:100% on
+           the universal * selector and collapses the grid on iPads. */
+        box-sizing: border-box;
     }
 
     .notice-date {
-        /* Reset margins as gap handles spacing */
         margin-right: 0;
         min-width: unset;
-        width: 100%;
-        text-align: left;
-        /* Shift date to left align within its column? Or center? User: "date on the left". Mobile default is likely left or top. Let's keep center for the column but checking. */
+        width: auto;
         text-align: center;
     }
 
     .notice-content {
-        /* Revert to default flex-column from mobile styles */
         display: flex;
         flex-direction: column;
         gap: 5px;
         align-items: flex-start;
-        width: 100%;
+        min-width: 0;   /* Crucial: allows flex child to shrink below its content width */
+        overflow: hidden;
     }
 
     .notice-title {
         margin-bottom: 0;
         padding-right: 0;
         text-align: left;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
 
     .file-meta {
@@ -749,10 +757,10 @@ img {
 /* Services Grid Section */
 /* Services Grid Section */
 .services-section {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    /* PHASE 4: Standardised to 32px top/bottom to match hero-section rhythm. */
+    padding-top: 32px;
+    padding-bottom: 32px;
     background-color: #f3f4f6;
-    /* Restored grey contrast as body is now white */
 }
 
 .section-title h3 {
@@ -778,9 +786,12 @@ img {
     background: #fff;
     padding: 20px 15px;
     border-radius: var(--radius-card);
+    /* PHASE 4: Replaced invisible transparent border + heavy shadow with a
+       visible hairline border. This gives cards clear separation without the
+       visual weight of a deep drop-shadow, reducing fatigue for all users. */
+    border: 1px solid #e5e7eb;
     box-shadow: var(--shadow-card);
     text-align: center;
-    border: 1px solid transparent;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
@@ -789,14 +800,13 @@ img {
     position: relative;
     overflow: hidden;
     flex: 1;
-    /* Distribute space evenly */
     min-width: 200px;
-    /* Prevent crushing */
 }
 
-/* Hover Effect: Lift & Border */
+/* Hover Effect: Subtle Lift & Green Border */
 .service-card:hover {
-    transform: translateY(-5px);
+    /* PHASE 4: Reduced lift from 5px to 3px — noticeable but not jarring. */
+    transform: translateY(-3px);
     box-shadow: var(--shadow-hover);
     border-color: var(--primary-light);
     text-decoration: none;
@@ -861,6 +871,8 @@ img {
     /* Reduced from 30px 0 */
     border-top: 1px solid #d1d5db;
     border-bottom: 1px solid #d1d5db;
+    /* PHASE 5: Contain repaints to this strip only. */
+    contain: layout paint;
 }
 
 .carousel-container {
@@ -1002,6 +1014,9 @@ img {
     background-color: #f3f4f6;
     border-bottom: 4px solid #f97316;
     /* Accent color separator */
+    /* PHASE 5: contain:layout paint isolates this section's repaints.
+       Prevents expensive full-page layout recalculations on slide change. */
+    contain: layout paint;
     position: relative;
     overflow: hidden;
 }
@@ -1009,8 +1024,10 @@ img {
 .gallery-slider {
     position: relative;
     width: 100%;
-    /* Fixed height for desktop banner style */
-    height: 450px;
+    /* Expanded height to push the Welcome section down below the fold.
+       Calculates 100% of viewport height minus approx header/nav height (~250px). */
+    height: calc(98vh - 250px);
+    min-height: 450px;
     overflow: hidden;
     background: #000;
 }
@@ -1877,4 +1894,550 @@ table.responsive tr:hover {
 
 .category-card:hover .card-action i {
     margin-left: 10px;
+}
+
+/* ==========================================================================
+   PHASE 5 — Performance, CLS Prevention & Low-Bandwidth Optimisation
+   All rules here are additive — no existing rules are changed.
+   ========================================================================== */
+
+/* ---------------------------------------------------------
+   Notification Board — CLS Prevention
+   Reserve vertical space before JS populates the list.
+   Without this, the board collapses to 0 height and the
+   page jumps when loadNotifications() fires (CLS bug).
+   4 items × ~82px per item = ~328px reserved.
+--------------------------------------------------------- */
+#home-notice-list {
+    min-height: 328px;
+    /* Smooth transition when content fills in */
+    transition: min-height 0.2s ease;
+}
+
+/* Once JS has loaded items, .loaded class is added and
+   the reservation is released to natural content height */
+#home-notice-list.loaded {
+    min-height: 0;
+}
+
+/* Reduce reservation on mobile (fewer pixels, less blank space during load) */
+@media (max-width: 900px) {
+    #home-notice-list {
+        min-height: 200px;
+    }
+}
+
+/* ---------------------------------------------------------
+   Services Section — Paint Containment
+   Isolates this section from full-page repaints triggered
+   by card hover transforms on low-end devices.
+--------------------------------------------------------- */
+.services-section {
+    contain: layout paint;
+}
+
+/* ==========================================================================
+   COMPREHENSIVE RESPONSIVE SYSTEM
+   Covers every device: Desktop (1280px) → Tablet (1024/900px) → Mobile (768/600/420px)
+   ========================================================================== */
+
+/* --- Global: Prevent horizontal overflow on ALL pages --- */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+/* ── 1280px: Large Desktop Clamp ── */
+@media (max-width: 1280px) {
+    .main-header .header-display {
+        padding: 0 40px;
+    }
+    .nav-container {
+        padding: 0 40px;
+    }
+    .hero-section {
+        padding: 32px 40px;
+    }
+}
+
+/* ── 1024px: Tablet Landscape ── */
+@media (max-width: 1024px) {
+    /* Header */
+    .banner-img {
+        height: 120px;
+    }
+    .main-header .header-display {
+        padding: 0 24px;
+    }
+    .nav-container {
+        padding: 0 24px;
+    }
+
+    /* Hero */
+    .hero-section {
+        padding: 28px 24px;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+    .welcome-card h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Services */
+    .services-grid {
+        gap: 12px;
+        padding: 0 24px;
+    }
+    .service-card h4 {
+        font-size: 0.95rem;
+    }
+
+    /* Gallery grid: 2 columns */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Slider */
+    .gallery-slider {
+        height: calc(90vh - 220px);
+        min-height: 380px;
+    }
+
+    /* Inner pages */
+    .inner-page-container {
+        padding: 0 28px;
+    }
+}
+
+/* ── 900px: Tablet Portrait / Small Laptop ── */
+@media (max-width: 900px) {
+    /* Utility Bar */
+    .gov-branding {
+        display: none !important;
+    }
+    .top_nav {
+        justify-content: center;
+        gap: 6px;
+        flex-wrap: wrap;
+        padding: 4px 10px;
+    }
+    .top_nav li {
+        font-size: 0.7rem;
+    }
+
+    /* Header */
+    .banner-img {
+        height: 100px;
+        width: auto;
+    }
+    .main-header .header-display {
+        padding: 0 16px;
+    }
+
+    /* Hamburger Nav */
+    .menu-toggle {
+        display: block;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #064e3b;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+        z-index: 1000;
+        padding-bottom: 10px;
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-menu li a {
+        padding: 14px 20px;
+        font-size: 1rem;
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+    .nav-container {
+        padding: 0 16px;
+        justify-content: space-between;
+    }
+
+    /* Hero: full-width stacked */
+    .hero-section {
+        padding: 24px 16px;
+    }
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .welcome-card h2 {
+        font-size: 1.35rem;
+        margin-bottom: 0.75rem;
+    }
+    .lead-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    .btn {
+        font-size: 0.85rem;
+        padding: 8px 16px;
+    }
+
+    /* Services: 3-up grid */
+    .services-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 10px;
+        padding: 0 16px;
+    }
+    .service-card {
+        min-width: unset;
+        padding: 14px 10px;
+    }
+    .service-card h4 { font-size: 0.82rem; }
+    .service-card p  { font-size: 0.72rem; }
+    .section-title h3 {
+        font-size: 1.35rem;
+    }
+
+    /* Notice board */
+    .notice-item {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        min-width: 0;
+        max-width: 100%;
+        padding: 14px 16px;
+        gap: 12px;
+    }
+    .notice-content {
+        min-width: 0;
+        overflow: hidden;
+    }
+    .notice-link {
+        word-break: break-word;
+        overflow-wrap: break-word;
+        font-size: 0.82rem;
+    }
+    .notice-date {
+        flex-shrink: 0;
+        font-size: 0.7rem;
+        min-width: 58px;
+    }
+    .notice-header h3 {
+        font-size: 1rem;
+    }
+
+    /* Slider */
+    .gallery-slider {
+        height: 250px;
+        min-height: 250px;
+    }
+    .slider-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 0.85rem;
+    }
+
+    /* Important links strip */
+    .important-links-track a {
+        flex: 0 0 120px;
+        height: 52px;
+        padding: 0 10px;
+    }
+    .important-links-track img {
+        max-height: 30px;
+    }
+
+    /* Inner pages */
+    .inner-page-container {
+        padding: 0 16px;
+    }
+    .page-title {
+        font-size: 1.6rem;
+    }
+    .section-heading {
+        font-size: 1.2rem;
+    }
+    p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+}
+
+/* ── 768px: Mobile Landscape / Phablets ── */
+@media (max-width: 768px) {
+    /* Touch targets */
+    .font-control {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+    }
+    .contrast-swatch {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+        min-height: 26px;
+        margin-left: 4px;
+    }
+    .menu-toggle {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    .footer-links a {
+        padding: 6px 8px;
+        display: inline-flex;
+        align-items: center;
+        min-height: 36px;
+    }
+
+    /* Header banner: auto height, full width */
+    .banner-img {
+        height: auto;
+        max-height: 90px;
+        width: 100%;
+        object-fit: contain;
+        object-position: left center;
+    }
+
+    /* Gallery slider */
+    .gallery-slider {
+        height: 220px;
+        min-height: 220px;
+    }
+
+    /* Carousel links strip */
+    .carousel-container {
+        gap: 5px;
+        padding: 0 10px;
+    }
+    .important-links-track a {
+        flex: 0 0 110px;
+        height: 50px;
+        padding: 0 8px;
+    }
+    .important-links-track img {
+        max-height: 28px;
+    }
+    .carousel-btn {
+        font-size: 1.1rem;
+        padding: 5px;
+    }
+
+    /* Footer */
+    .main-footer {
+        padding: 12px 0;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        padding: 12px 16px;
+    }
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    /* Inner pages: tighter */
+    .inner-page-container {
+        padding: 0 12px;
+    }
+    .page-title {
+        font-size: 1.4rem;
+    }
+    .section-heading {
+        font-size: 1.1rem;
+    }
+    .content-body p {
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
+    /* Contact page map iframe: responsive */
+    .contact-map iframe {
+        width: 100% !important;
+        height: 220px !important;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Tables: horizontal scroll on mobile */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border: 1px solid #e5e7eb;
+        border-radius: 6px;
+        margin-bottom: 2rem;
+    }
+    table.responsive {
+        min-width: 540px;
+        font-size: 0.82rem;
+    }
+    table.responsive th,
+    table.responsive td {
+        padding: 8px 10px;
+        font-size: 0.82rem;
+        word-break: break-word;
+    }
+
+    /* Notification CLS: smaller reserve on mobile */
+    #home-notice-list {
+        min-height: 200px;
+    }
+
+    /* Gallery grid: 1 column on mobile */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    .gallery-item img {
+        height: 200px;
+    }
+
+    /* Sitemap tree */
+    .sitemap-tree {
+        margin-left: 10px;
+        padding-left: 10px;
+    }
+    .sitemap-tree > li {
+        font-size: 1.05rem;
+    }
+
+    /* Category gallery cards: 1 column */
+    .gallery-category-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+/* ── 600px: Small Phones ── */
+@media (max-width: 600px) {
+    /* Utility bar: hide non-essential items to save space */
+    .top_nav .access-tools .label {
+        display: none;
+    }
+    .top_nav {
+        gap: 4px;
+        padding: 4px 8px;
+    }
+
+    /* Header */
+    .banner-img {
+        max-height: 72px;
+    }
+
+    /* Services: 2-column grid */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px;
+        padding: 0 10px;
+    }
+    .service-card h4 { font-size: 0.78rem; }
+    .service-card p  { display: none; } /* hide descriptions on very small screens */
+    .service-icon {
+        font-size: 1.4rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Slider */
+    .gallery-slider {
+        height: 190px;
+        min-height: 190px;
+    }
+
+    /* Hero heading */
+    .welcome-card h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Page title */
+    .page-title {
+        font-size: 1.25rem;
+        padding-bottom: 0.6rem;
+    }
+
+    /* Important links strip: tighter */
+    .important-links-track a {
+        flex: 0 0 95px;
+        height: 44px;
+    }
+    .important-links-track img {
+        max-height: 24px;
+    }
+
+    /* Lightbox nav buttons */
+    .nav-btn {
+        width: 36px;
+        height: 36px;
+        padding: 8px;
+        font-size: 1rem;
+    }
+    .prev-btn { left: 6px; }
+    .next-btn { right: 6px; }
+}
+
+/* ── 420px: Very Small Phones (e.g. Galaxy A01, older iPhones) ── */
+@media (max-width: 420px) {
+    /* Services: 2-col only */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px;
+        padding: 0 8px;
+    }
+
+    /* Banner */
+    .banner-img {
+        max-height: 60px;
+    }
+
+    /* Slider */
+    .gallery-slider {
+        height: 160px;
+        min-height: 160px;
+    }
+
+    /* Font/contrast controls: compact */
+    .font-control {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        min-height: 30px;
+        font-size: 0.7rem;
+    }
+    .contrast-swatch {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        min-height: 22px;
+    }
+
+    /* Notices: compact */
+    .notice-item {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    /* Page title */
+    .page-title {
+        font-size: 1.1rem;
+    }
 }

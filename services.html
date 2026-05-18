@@ -19,7 +19,12 @@
     <link href="css/black.css" rel="stylesheet" type="text/css" />
     <link href="css/white.css" rel="stylesheet" type="text/css" />
 
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+    <!-- Phase 1: Accessibility & Semantic Compliance (WCAG 2.1 AA / GIGW 3.0) -->
+    <link href="css/accessibility.css" rel="stylesheet" type="text/css" />
+    <!-- Phase 3: Mobile Responsiveness Improvements -->
+    <link href="css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type='text/javascript' src='js/jquery.min.js'></script>
     <script src="js/accessibility.js"></script>
     <script src="js/theme.js" type="text/javascript"></script>
@@ -30,28 +35,33 @@
 <body>
     <!-- Top Utility Bar -->
     <!-- Top Utility Bar -->
-    <div class="header_top">
-        <ul class="top_nav">
-            <li class="gov-branding">
+        <div class="header_top" role="region" aria-label="Accessibility Tools and Site Utilities">
+        <ul class="top_nav" role="toolbar" aria-label="Page accessibility controls">
+            <li class="gov-branding" role="presentation">
                 <span class="gov-text">Government of Meghalaya</span>
             </li>
 
             <li><a href="#main-content" class="skip-link">Skip to Main Content</a></li>
             <li><a href="screen.html" title="Screen Reader Access">Screen Reader Access</a></li>
-            <li class="access-tools">
-                <span class="label">Text Size:</span>
-                <a id="fontSmall" href="javascript:void(0);" aria-label="Decrease Text Size" class="font-control">A-</a>
-                <a id="fontDefault" href="javascript:void(0);" aria-label="Reset Text Size" class="font-control">A</a>
-                <a id="fontLarge" href="javascript:void(0);" aria-label="Increase Text Size" class="font-control">A+</a>
+
+            <li class="access-tools" role="group" aria-label="Text size controls">
+                <span class="label" aria-hidden="true">Text Size:</span>
+                <button id="fontSmall" aria-label="Decrease text size" class="font-control" type="button">A-</button>
+                <button id="fontDefault" aria-label="Reset text size to default" class="font-control" type="button">A</button>
+                <button id="fontLarge" aria-label="Increase text size" class="font-control" type="button">A+</button>
             </li>
-            <li class="access-tools">
-                <span class="label">Contrast:</span>
-                <a href="#" onClick="switch_style('style');return false;" id="style" aria-label="Default Contrast"
-                    class="contrast-swatch swatch-default" title="Default Contrast"></a>
-                <a href="#" onClick="switch_style('black');return false;" id="black" aria-label="High Contrast Black"
-                    class="contrast-swatch swatch-black" title="High Contrast"></a>
-                <a href="#" onClick="switch_style('white');return false;" id="white" aria-label="High Contrast White"
-                    class="contrast-swatch swatch-white" title="Light Contrast"></a>
+
+            <li class="access-tools" role="group" aria-label="Colour contrast controls">
+                <span class="label" aria-hidden="true">Contrast:</span>
+                <button onclick="switch_style('style');return false;" id="btn-contrast-default"
+                    aria-label="Switch to default colour theme" aria-pressed="false"
+                    class="contrast-swatch swatch-default" title="Default Contrast" type="button"></button>
+                <button onclick="switch_style('black');return false;" id="btn-contrast-black"
+                    aria-label="Switch to high contrast black theme" aria-pressed="false"
+                    class="contrast-swatch swatch-black" title="High Contrast Black" type="button"></button>
+                <button onclick="switch_style('white');return false;" id="btn-contrast-white"
+                    aria-label="Switch to high contrast white theme" aria-pressed="false"
+                    class="contrast-swatch swatch-white" title="High Contrast White" type="button"></button>
             </li>
         </ul>
     </div>
@@ -59,24 +69,24 @@
     <!-- Main Header / Banner -->
     <header class="main-header">
         <div class="container-fluid header-display">
-            <img src="images/header.png" alt="Directorate of Housing, Government of Meghalaya" class="banner-img">
+            <a href="index.html" title="Go to Home Page" aria-label="Go to Home Page"><img src="images/header.png" alt="Directorate of Housing, Government of Meghalaya" class="banner-img"></a>
         </div>
     </header>
     <!-- Navigation Bar (Mega Menu) -->
     <!-- Navigation Bar (Mega Menu) -->
     <nav id="main-navbar" class="main-navbar" aria-label="Main Navigation">
         <div class="nav-container">
-            <button class="menu-toggle" aria-label="Toggle navigation">
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-menu" type="button">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="main-nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about_us.html">About Us</a></li>
                 <li><a href="organogram.html">Organogram</a></li>
                 <li><a href="schemes.html">Schemes</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="services.html" class="active" aria-current="page">Services</a></li>
                 <li><a href="tenders.html">Tenders</a></li>
                 <li><a href="notifications.html">Notifications</a></li>
                 <li><a href="acts.html">Acts</a></li>
@@ -173,7 +183,7 @@
                     class="fas fa-chevron-right"></i></button>
         </div>
     </div>
-    <footer class="main-footer">
+    <footer class="main-footer" role="contentinfo">
         <div class="footer-bottom">
             <p>Site designed, developed and hosted by National Informatics Centre<br> Directorate of Housing, Government
                 of Meghalaya</p>

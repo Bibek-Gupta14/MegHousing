@@ -19,7 +19,12 @@
     <link href="css/black.css" rel="stylesheet" type="text/css" />
     <link href="css/white.css" rel="stylesheet" type="text/css" />
 
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0" />
+    <!-- Phase 1: Accessibility & Semantic Compliance (WCAG 2.1 AA / GIGW 3.0) -->
+    <link href="css/accessibility.css" rel="stylesheet" type="text/css" />
+    <!-- Phase 3: Mobile Responsiveness Improvements -->
+    <link href="css/responsive.css" rel="stylesheet" type="text/css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script type='text/javascript' src='js/jquery.min.js'></script>
     <script src="js/accessibility.js"></script>
     <script src="js/theme.js" type="text/javascript"></script>
@@ -30,28 +35,33 @@
 <body>
     <!-- Top Utility Bar -->
     <!-- Top Utility Bar -->
-    <div class="header_top">
-        <ul class="top_nav">
-            <li class="gov-branding">
+        <div class="header_top" role="region" aria-label="Accessibility Tools and Site Utilities">
+        <ul class="top_nav" role="toolbar" aria-label="Page accessibility controls">
+            <li class="gov-branding" role="presentation">
                 <span class="gov-text">Government of Meghalaya</span>
             </li>
 
             <li><a href="#main-content" class="skip-link">Skip to Main Content</a></li>
             <li><a href="screen.html" title="Screen Reader Access">Screen Reader Access</a></li>
-            <li class="access-tools">
-                <span class="label">Text Size:</span>
-                <a id="fontSmall" href="javascript:void(0);" aria-label="Decrease Text Size" class="font-control">A-</a>
-                <a id="fontDefault" href="javascript:void(0);" aria-label="Reset Text Size" class="font-control">A</a>
-                <a id="fontLarge" href="javascript:void(0);" aria-label="Increase Text Size" class="font-control">A+</a>
+
+            <li class="access-tools" role="group" aria-label="Text size controls">
+                <span class="label" aria-hidden="true">Text Size:</span>
+                <button id="fontSmall" aria-label="Decrease text size" class="font-control" type="button">A-</button>
+                <button id="fontDefault" aria-label="Reset text size to default" class="font-control" type="button">A</button>
+                <button id="fontLarge" aria-label="Increase text size" class="font-control" type="button">A+</button>
             </li>
-            <li class="access-tools">
-                <span class="label">Contrast:</span>
-                <a href="#" onClick="switch_style('style');return false;" id="style" aria-label="Default Contrast"
-                    class="contrast-swatch swatch-default" title="Default Contrast"></a>
-                <a href="#" onClick="switch_style('black');return false;" id="black" aria-label="High Contrast Black"
-                    class="contrast-swatch swatch-black" title="High Contrast"></a>
-                <a href="#" onClick="switch_style('white');return false;" id="white" aria-label="High Contrast White"
-                    class="contrast-swatch swatch-white" title="Light Contrast"></a>
+
+            <li class="access-tools" role="group" aria-label="Colour contrast controls">
+                <span class="label" aria-hidden="true">Contrast:</span>
+                <button onclick="switch_style('style');return false;" id="btn-contrast-default"
+                    aria-label="Switch to default colour theme" aria-pressed="false"
+                    class="contrast-swatch swatch-default" title="Default Contrast" type="button"></button>
+                <button onclick="switch_style('black');return false;" id="btn-contrast-black"
+                    aria-label="Switch to high contrast black theme" aria-pressed="false"
+                    class="contrast-swatch swatch-black" title="High Contrast Black" type="button"></button>
+                <button onclick="switch_style('white');return false;" id="btn-contrast-white"
+                    aria-label="Switch to high contrast white theme" aria-pressed="false"
+                    class="contrast-swatch swatch-white" title="High Contrast White" type="button"></button>
             </li>
         </ul>
     </div>
@@ -59,19 +69,19 @@
     <!-- Main Header / Banner -->
     <header class="main-header">
         <div class="container-fluid header-display">
-            <img src="images/header.png" alt="Directorate of Housing, Government of Meghalaya" class="banner-img">
+            <a href="index.html" title="Go to Home Page" aria-label="Go to Home Page"><img src="images/header.png" alt="Directorate of Housing, Government of Meghalaya" class="banner-img"></a>
         </div>
     </header>
     <!-- Navigation Bar (Mega Menu) -->
     <!-- Navigation Bar (Mega Menu) -->
     <nav id="main-navbar" class="main-navbar" aria-label="Main Navigation">
         <div class="nav-container">
-            <button class="menu-toggle" aria-label="Toggle navigation">
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav-menu" type="button">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="main-nav-menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about_us.html">About Us</a></li>
                 <li><a href="organogram.html">Organogram</a></li>
@@ -81,7 +91,7 @@
                 <li><a href="notifications.html">Notifications</a></li>
                 <li><a href="acts.html">Acts</a></li>
                 <li><a href="key_contacts.html">Key Contacts</a></li>
-                <li><a href="contact_us.html" class="active">Contact Us</a></li>
+                <li><a href="contact_us.html" class="active" aria-current="page">Contact Us</a></li>
                 <li><a href="sitemap.html">Sitemap</a></li>
             </ul>
         </div>
@@ -93,16 +103,26 @@
                 <div class="content-body">
                     <h1 class="page-title">Contact Us</h1>
 
-                    <p><strong>Office of the Director of Housing</strong><br>
-                        3rd Secretariat,<br>
-                        Nokrek Building,<br>
-                        Lower Lachumiere,<br>
-                        Shillong - 793001<br>
-                        Phone No.: 0364/2501114<br>
-                        Email: dir.housing-meg@gov.in</p>
+                    <div class="contact-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                        <div class="contact-details">
+                            <p><strong>Office of the Director of Housing</strong><br>
+                                3rd Secretariat,<br>
+                                Nokrek Building,<br>
+                                Lower Lachumiere,<br>
+                                Shillong - 793001<br>
+                                Phone No.: 0364/2501114<br>
+                                Email: dir.housing-meg@gov.in</p>
+                        </div>
+                        <div class="contact-map">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.0659671267413!2d91.8840368752477!3d25.56947197747316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37507e973fba99eb%3A0x8f8b27df809f3c23!2sThe%20Directorate%20of%20Tourism%203rd%20Secretariat%20Nokrek%20Building!5e0!3m2!1sen!2sin!4v1778736790375!5m2!1sen!2sin" width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                title="Map location of Directorate of Housing">
+                            </iframe>
+                        </div>
+                    </div>
 
                     <h2 class="section-heading">Web Information Manager</h2>
-                    <p><strong>Smti B. Susngi</strong><br>
+                    <p><strong>Smt. B. Susngi</strong><br>
                         Directorate of Housing,<br>
                         Meghalaya, Shillong<br>
                         Phone No.: 0364/2501114</p>
@@ -150,7 +170,7 @@
                     class="fas fa-chevron-right"></i></button>
         </div>
     </div>
-    <footer class="main-footer">
+    <footer class="main-footer" role="contentinfo">
         <div class="footer-bottom">
             <p>Site designed, developed and hosted by National Informatics Centre<br> Directorate of Housing, Government
                 of Meghalaya</p>
