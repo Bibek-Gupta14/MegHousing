@@ -2,7 +2,7 @@
 
 ## Directorate of Housing, Government of Meghalaya
 
-![MegHousing Banner](/MegHousing/images/header.png)
+![MegHousing Banner](/images/header.png)
 
 > **Modernizing Public Services: A Responsive, Accessible, and Compliant Government Portal**
 
@@ -58,6 +58,92 @@ Built with accessibility and inclusion at its core, the portal ensures equitable
 
 ---
 
+<<<<<<< HEAD
+=======
+
+## 🔗 Important Government Links
+
+The MegHousing Portal integrates seamlessly with national and state-level initiatives. Below are the key government portals linked from our platform:
+
+<table align="center">
+
+<!-- ROW 1 -->
+<tr>
+<td align="center" width="200" style="padding:10px;">
+National Portal of India <br><br>
+<a href="https://india.gov.in" target="_blank">
+<img src="images/importantLinks/indiagov.jpg" width="100"/>
+</a>
+</td>
+
+<td align="center" width="200" style="padding:10px;">
+Meghalaya State Portal <br><br>
+<a href="https://meghalaya.gov.in/" target="_blank">
+<img src="images/importantLinks/meg.jpg" width="100"/>
+</a>
+</td>
+
+<td align="center" width="200" style="padding:10px;">
+RTI Act Portal <br><br>
+<a href="https://rti.gov.in/" target="_blank">
+<img src="images/importantLinks/rtiact.jpg" width="100"/>
+</a>
+</td>
+</tr>
+
+<!-- ROW 2 -->
+<tr>
+<td align="center" width="200" style="padding:10px;">
+Digital India <br><br>
+<a href="https://www.digitalindia.gov.in" target="_blank">
+<img src="images/importantLinks/digitalIndia.jpg" width="100"/>
+</a>
+</td>
+
+<td align="center" width="200" style="padding:10px;">
+Make in India <br><br>
+<a href="https://www.makeinindia.com" target="_blank">
+<img src="images/importantLinks/make-in-india.jpg" width="100"/>
+</a>
+</td>
+
+<td align="center" width="200" style="padding:10px;">
+MyGov <br><br>
+<a href="https://www.mygov.in" target="_blank">
+<img src="images/importantLinks/my-gov.jpg" width="100"/>
+</a>
+</td>
+</tr>
+
+<!-- ROW 3 -->
+<tr>
+<td align="center" width="200" style="padding:10px;">
+PM India <br><br>
+<a href="https://www.pmindia.gov.in" target="_blank">
+<img src="images/importantLinks/pm-india.jpg" width="100"/>
+</a>
+</td>
+
+<td align="center" width="200" style="padding:10px;">
+Swachh Bharat Mission <br><br>
+<a href="https://swachhbharatmission.gov.in" target="_blank">
+<img src="images/importantLinks/swatchBharat.jpg" width="100"/>
+</a>
+</td>
+
+<td align="center" width="200" style="padding:10px;">
+National Informatics Centre <br><br>
+<a href="https://www.nic.in/" target="_blank">
+<img src="images/importantLinks/nic.png" width="100"/>
+</a>
+</td>
+</tr>
+
+</table>
+
+---
+
+>>>>>>> 8551efd26da5584173bfa1f268a49bb699a47994
 ## 🛠️ Technology Stack
 
 | Component           | Technology                              |
@@ -174,6 +260,7 @@ npx http-server
 
 ---
 
+<<<<<<< HEAD
 ## 🔗 Important Government Links
 
 The MegHousing Portal integrates seamlessly with national and state-level initiatives. Below are the key government portals linked from our platform:
@@ -256,6 +343,8 @@ National Informatics Centre <br><br>
 
 ---
 
+=======
+>>>>>>> 8551efd26da5584173bfa1f268a49bb699a47994
 ## ♿ Accessibility Features
 
 ### Universal Design Principles
@@ -329,6 +418,7 @@ National Informatics Centre <br><br>
 
 ---
 
+<<<<<<< HEAD
 ## 🔄 Maintenance & Updates
 
 ### Routine Maintenance
@@ -380,6 +470,8 @@ Your suggestions help us improve! Submit feedback via the "Feedback" link in the
 
 ---
 
+=======
+>>>>>>> 8551efd26da5584173bfa1f268a49bb699a47994
 ## 🤝 Contributing
 
 We welcome contributions from government IT teams, web developers, and accessibility specialists.
@@ -413,6 +505,7 @@ For details, see [LICENSE.md](LICENSE.md) and the [Open Government Data Platform
 
 ---
 
+<<<<<<< HEAD
 ## 🎯 Roadmap
 
 ### Phase 1: Foundation ✅ (Completed)
@@ -436,6 +529,8 @@ For details, see [LICENSE.md](LICENSE.md) and the [Open Government Data Platform
 
 ---
 
+=======
+>>>>>>> 8551efd26da5584173bfa1f268a49bb699a47994
 ## 📊 Key Metrics
 
 - **Accessibility Score**: 95+ (WAVE audit)
