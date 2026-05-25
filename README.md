@@ -58,9 +58,6 @@ Built with accessibility and inclusion at its core, the portal ensures equitable
 
 ---
 
-<<<<<<< HEAD
-=======
-
 ## 🔗 Important Government Links
 
 The MegHousing Portal integrates seamlessly with national and state-level initiatives. Below are the key government portals linked from our platform:
@@ -143,7 +140,6 @@ National Informatics Centre <br><br>
 
 ---
 
->>>>>>> 8551efd26da5584173bfa1f268a49bb699a47994
 ## 🛠️ Technology Stack
 
 | Component           | Technology                              |
@@ -332,7 +328,6 @@ npx http-server
 
 ---
 
-<<<<<<< HEAD
 ## 🔄 Maintenance & Updates
 
 ### Routine Maintenance
@@ -350,42 +345,6 @@ npx http-server
 
 ---
 
-## 📊 Deployment Flowchart
-
-![Deployment Process](images/flowcharts/deployment-process.png)
-
-Our deployment follows a structured process ensuring quality and security:
-
-1. **Development** → Code written and tested locally
-2. **Staging** → Tested on staging environment
-3. **Quality Assurance** → Security and accessibility audit
-4. **Production** → Deployed to NIC Cloud infrastructure
-
----
-
-## 📞 Support & Contact
-
-### For Citizens
-
-- **General Inquiries**: contact@meghousing.gov.in
-- **Grievance Portal**: grievance.meghousing.gov.in
-- **Help Desk**: 1800-XXX-XXXX (Toll-free)
-- **Office Hours**: Monday–Friday, 9 AM–5 PM (IST)
-
-### For Technical Issues
-
-- **Report Bug**: issues@meghousing.gov.in
-- **Accessibility Issues**: accessibility@meghousing.gov.in
-- **Security Concerns**: security@meghousing.gov.in (Use PGP key provided)
-
-### Feedback
-
-Your suggestions help us improve! Submit feedback via the "Feedback" link in the footer.
-
----
-
-=======
->>>>>>> 8551efd26da5584173bfa1f268a49bb699a47994
 ## 🤝 Contributing
 
 We welcome contributions from government IT teams, web developers, and accessibility specialists.
@@ -419,32 +378,6 @@ For details, see [LICENSE.md](LICENSE.md) and the [Open Government Data Platform
 
 ---
 
-<<<<<<< HEAD
-## 🎯 Roadmap
-
-### Phase 1: Foundation ✅ (Completed)
-
-- Semantic HTML structure
-- Responsive CSS framework
-- Basic accessibility features
-
-### Phase 2: Enhancement (Current)
-
-- Advanced accessibility features
-- Performance optimization
-- User feedback implementation
-
-### Phase 3: Future
-
-- Multilingual support expansion
-- Advanced search functionality
-- Mobile app version (React Native)
-- Integration with state databases (secure, privacy-compliant)
-
----
-
-=======
->>>>>>> 8551efd26da5584173bfa1f268a49bb699a47994
 ## 📊 Key Metrics
 
 - **Accessibility Score**: 95+ (WAVE audit)
@@ -467,16 +400,6 @@ For detailed security information, see [SECURITY.md](SECURITY.md).
 
 ---
 
-## 📚 Documentation
-
-- **[User Guide](docs/USER_GUIDE.md)**: Step-by-step instructions for citizens
-- **[Developer Guide](docs/DEVELOPER_GUIDE.md)**: Technical documentation for developers
-- **[Accessibility Guide](docs/ACCESSIBILITY_GUIDE.md)**: Detailed accessibility features
-- **[API Documentation](docs/API.md)**: JSON data structures
-- **[Contributing Guide](CONTRIBUTING.md)**: How to contribute
-
----
-
 ## 🏆 Awards & Recognition
 
 This portal demonstrates excellence in:
@@ -488,20 +411,9 @@ This portal demonstrates excellence in:
 
 ---
 
-## 📝 Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for detailed version history and updates.
-
----
-
 ## 👥 Team
 
-**Project Led By**: Directorate of Housing, Government of Meghalaya
-
-**Technical Team**: Web Development & Design professionals certified in accessibility and government standards
-
-**Quality Assurance**: Comprehensive testing across all standards and devices
-
+**Project Under**: Directorate of Housing, Government of Meghalaya
 ---
 
 ## 📮 Feedback
@@ -523,20 +435,11 @@ We're committed to continuous improvement. Share your feedback:
 
 ---
 
-**Last Updated**: May 2026 | **Next Review**: November 2026
-
+**Last Updated**: May 2026 | 
 **For the latest information, visit**: [MegHousing Portal](https://meghousing.gov.in)
 
 ---
 
-![MegHousing Logo](images/logo.png)
-
-## 🌟 Excellence in Citizen Service
-
-_"Empowering Citizens Through Accessible, Transparent, and Responsive Government Services"_
-
----
-
-**Proudly Developed Using**: HTML5 | CSS3 | Vanilla JavaScript | ♿ WCAG 2.1 AA | 🏛️ GIGW 3.0 Compliant
+**Developed Using**: HTML5 | CSS3 | Vanilla JavaScript | ♿ WCAG 2.1 AA | 🏛️ GIGW 3.0 Compliant
 
 **Government of Meghalaya - Directorate of Housing**
